@@ -1,7 +1,8 @@
-# Primavera Venue Partners™
+# Primavera Growth Partners™
 
-Landing page **estática** del programa de aliados estratégicos de **Primavera Events Group**,
-dirigida a dueños de salones y jardines en Morelos.
+Landing page **estática** del programa de alianzas comerciales de **Primavera Events Group**.
+Esta página presenta la vertical de espacios —**Venue Partners**— dirigida a dueños de salones
+y jardines en Morelos.
 
 No es una cotización: es una página comercial B2B permanente. Se publica en **GitHub Pages**
 y se comparte con prospectos de alianza (dueños de venue) por Messenger, WhatsApp o correo.
@@ -94,9 +95,11 @@ C:\Users\Lenovo\Documents\PRIMAVERA GROWTH PARTNERS
 
 Remoto: `git@github.com:5410m0n0c001/PRIMAVERA-GROWTH-PARTNERS.git`
 
-> Nota de nombres: el repositorio se llama **PRIMAVERA-GROWTH-PARTNERS** y la marca del
-> programa es **Primavera Venue Partners™**. El nombre del repo no aparece en la página;
-> solo afecta la URL de GitHub Pages.
+> Nota de nombres (decisión de Salo, 2026-09-09): **Primavera Growth Partners™** es la marca
+> paraguas del programa de alianzas — es la que encabeza la página y coincide con el nombre del
+> repositorio. **Primavera Venue Partners™** es la vertical de venues que esta página presenta.
+> El programa queda abierto a futuras verticales (proveedores, producción audiovisual, hospedaje)
+> bajo la misma estructura de niveles y los mismos cinco pilares.
 
 La carpeta `C:\Users\Lenovo\Documents\primavera-venue-partners` fue el borrador de origen
 (sesión de `alexros brain`). **La fuente de verdad ahora es este repositorio** — no editar allá.
@@ -129,7 +132,10 @@ el 8 de septiembre de 2026, no contra memoria ni archivos locales sueltos.
 - **Contradicción registrada:** el playbook muestra `primaveraeventsgroup.com/jardin-la-flor/`,
   pero `venues` marca Jardín La Flor con `es_oficial = false` y `url_oficial = null`
   (verificado en vivo 2026-08-10). Gana la tabla verificada → **ese enlace no se usa**.
-- **URLs sin verificar en vivo hoy:** Expo Boda y 15 Años, y Primavera Haute Runway.
+- **Expo Boda y 15 Años:** URL verificada en vivo el 2026-09-09 (existe, título "Expo Boda y Quince
+  Años Centro De Convenciones Presidente"). **Primavera Haute Runway** aparece como entrada real del
+  blog del sitio, pero no se enlaza porque no se capturó su URL exacta.
+- **URLs sin verificar en vivo hoy:** ninguna pendiente crítica.
   Aparecen en tres fuentes locales coincidentes pero no se comprobaron con un fetch.
   **Verificarlas antes de publicar en producción.**
 - **Zonas de cobertura:** derivadas de los municipios de los venues oficiales. "Asignada"

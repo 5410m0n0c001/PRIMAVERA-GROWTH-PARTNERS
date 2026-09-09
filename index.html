@@ -165,6 +165,20 @@
         .btn-expo:hover { background:var(--primary-pink); color:white; transform:scale(1.05); }
         .expo-img-box { flex:1; min-width:220px; overflow:hidden; }
         .expo-img-box img { width:100%; height:100%; object-fit:cover; min-height:210px; }
+        .planners-contact-section { margin-top:50px; padding:40px 20px; background:linear-gradient(135deg, rgba(250,218,221,.5), rgba(248,246,244,.9)); border-radius:24px; border:1px solid var(--beige); text-align:center; }
+        .planners-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; max-width:700px; margin:22px auto 0; }
+        .planner-card { text-decoration:none; color:inherit; display:flex; flex-direction:column; background:var(--white); border-radius:20px; overflow:hidden; border:1px solid var(--beige); box-shadow:0 8px 20px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .planner-card:hover { transform:translateY(-6px); box-shadow:0 16px 32px rgba(246,92,122,.22); border-color:var(--primary-pink); }
+        .planner-img-wrap { position:relative; width:100%; height:320px; overflow:hidden; background:var(--background-light); }
+        .planner-img { width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .4s ease; }
+        .planner-card:hover .planner-img { transform:scale(1.05); }
+        .planner-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 60%); display:flex; align-items:flex-end; justify-content:center; padding:20px; opacity:.95; transition:opacity .3s ease; }
+        .planner-card:hover .planner-overlay { opacity:1; }
+        .btn-planner-cta { background:var(--primary-pink); color:var(--white); padding:12px 22px; border-radius:50px; font-size:.88rem; font-weight:600; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+        .planner-info { padding:18px 15px; text-align:center; background:var(--white); }
+        .planner-info h4 { font-size:1.15rem; color:var(--primary-dark); margin-bottom:4px; }
+        .planner-info p { font-size:.82rem; color:var(--gray-text); margin:0; }
+        .planner-info .planner-rol { color:var(--primary-pink); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.6px; margin-bottom:3px; }
         .rostros-cover img { width:100%; height:auto; display:block; border-radius:20px; border:1px solid var(--beige); box-shadow:0 14px 32px rgba(31,31,31,.10); margin-bottom:24px; }
         .expo-img-box.retrato { background:var(--background-light); display:flex; align-items:center; justify-content:center; padding:14px; min-height:420px; }
         .expo-img-box.retrato img { object-fit:contain; height:auto; max-height:560px; min-height:0; }
@@ -1034,6 +1048,36 @@
         </video>
     </div>
 
+    <!-- ═══ TARJETAS DE PLANNERS ═══ -->
+    <div class="planners-contact-section">
+        <h3 class="section-title"><i class="fas fa-address-card"></i> Contacto directo con tus planners</h3>
+        <p class="section-intro" style="text-align:center">Toca la tarjeta de cualquiera de los dos para abrir su página personal dentro del sitio de Primavera Events Group.</p>
+        <div class="planners-grid">
+            <a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener" class="planner-card">
+                <div class="planner-img-wrap">
+                    <img src="planner-richard.webp" alt="Richard Hernández, Senior Event &amp; Wedding Planner" class="planner-img" loading="lazy">
+                    <div class="planner-overlay"><span class="btn-planner-cta"><i class="fas fa-arrow-right"></i> Ver a Richard</span></div>
+                </div>
+                <div class="planner-info">
+                    <h4>Richard Hernández</h4>
+                    <p class="planner-rol">Founder &amp; Director Creativo</p>
+                    <p>Senior Event &amp; Wedding Planner</p>
+                </div>
+            </a>
+            <a href="https://primaveraeventsgroup.com/jessy/" target="_blank" rel="noopener" class="planner-card">
+                <div class="planner-img-wrap">
+                    <img src="planner-jessy.png" alt="Jessy Sandoval, Senior Event &amp; Wedding Planner" class="planner-img" loading="lazy">
+                    <div class="planner-overlay"><span class="btn-planner-cta"><i class="fas fa-arrow-right"></i> Ver a Jessy</span></div>
+                </div>
+                <div class="planner-info">
+                    <h4>Jessy Sandoval</h4>
+                    <p class="planner-rol">Founder &amp; Lead Planner</p>
+                    <p>Senior Event &amp; Wedding Planner</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <!-- ═══ 15. CTA ═══ -->
     <div class="cta-container">
         <h3>Si tu zona sigue abierta, con gusto conocemos tu venue.</h3>
@@ -1043,7 +1087,6 @@
             <a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener">Richard Hernández</a>
             <a href="https://primaveraeventsgroup.com/jessy/" target="_blank" rel="noopener">Jessy Sandoval</a>
             <a href="https://primaveraeventsgroup.com/venues/" target="_blank" rel="noopener">Catálogo de venues</a>
-            <a href="https://g.page/r/CRYo3lgLK8NEEBM/review" target="_blank" rel="noopener">Reseñas en Google</a>
         </div>
     </div>
 
@@ -1061,11 +1104,11 @@
             <a href="https://www.youtube.com/@PrimaveraEventsGroup" target="_blank" rel="noopener" class="fab-item" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <button class="fab-main fab-social" id="btnSocial" aria-label="Redes sociales">
-            <span class="fab-label">Nuestras redes</span><i class="fas fa-share-alt"></i>
+            <span class="fab-label">Nuestras redes</span><i class="fas fa-hashtag"></i>
         </button>
     </div>
     <button class="fab-main fab-share" id="btnShare" title="Compartir" aria-label="Compartir">
-        <span class="fab-label">Compartir</span><i class="fas fa-paper-plane"></i>
+        <span class="fab-label">Compartir</span><i class="fas fa-share-nodes"></i>
     </button>
 </div>
 

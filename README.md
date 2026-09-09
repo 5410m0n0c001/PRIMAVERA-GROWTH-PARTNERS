@@ -107,7 +107,7 @@ El carrusel y el visor a pantalla completa son genéricos: cualquier bloque
 `.slides-section` con `.slides-track`, `.slide-nav` y `.slides-dots` se inicializa solo,
 sin ids. Para agregar un carrusel nuevo basta copiar el bloque HTML.
 
-Departamentos **contable** y **jurídico** dados de alta en `conocimiento_rag_chunks`
+**Unidad Contable** y **Unidad Jurídica** dadas de alta en `conocimiento_rag_chunks`
 (categoría `colaborador`) el 2026-09-09, declarados por dirección. Falta asignarles
 responsable y generarles embedding para que el RAG los recupere por búsqueda vectorial.
 

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primavera Venue Partners | Alianza Estratégica de Venues — Primavera Events Group</title>
+    <meta name="description" content="Programa de alianza estratégica de Primavera Events Group para dueños de salones y jardines en Morelos: posicionamiento, comercialización, generación de demanda, contenido y red de eventos.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #F65C7A; --primary-light: #FF8FA3; --primary-dark: #1F1F1F;
+            --background-light: #F8F6F4; --white: #FFFFFF; --soft-pink: #FADADD; --beige: #EFE7E1;
+            --gold-accent: #C9A96E; --gray-text: #6D6D6D;
+            --font-serif: 'Playfair Display', serif; --font-sans: 'Poppins', sans-serif;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: var(--font-sans); background: var(--background-light); color: var(--primary-dark); line-height:1.6; -webkit-font-smoothing:antialiased; }
+        h1,h2,h3,h4 { font-family: var(--font-serif); }
+
+        /* 1. PRELOADER */
+        #preloader { position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg,#1f1f1f 0%,#2d1422 100%); z-index:9999; display:flex; align-items:center; justify-content:center; transition:opacity .8s ease, visibility .8s ease; }
+        #preloader.fade-out { opacity:0; visibility:hidden; }
+        #preloader video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:.35; z-index:1; }
+        .preloader-overlay { position:relative; z-index:2; text-align:center; width:90%; max-width:480px; background:rgba(255,255,255,.95); backdrop-filter:blur(15px); padding:40px; border-radius:30px; border:2px solid var(--gold-accent); box-shadow:0 25px 55px rgba(0,0,0,.35); }
+        .preloader-logo { width:80px; height:80px; margin-bottom:20px; border-radius:50%; border:2px solid var(--gold-accent); object-fit:contain; background:var(--primary-dark); padding:8px; }
+        .preloader-title { font-size:1.6rem; margin-bottom:12px; font-weight:700; }
+        .preloader-text { color:var(--gray-text); font-size:.95rem; margin-bottom:25px; }
+        .btn-enter { background:var(--primary-pink); color:var(--white); border:none; padding:14px 42px; border-radius:30px; font-size:.95rem; font-weight:600; cursor:pointer; box-shadow:0 6px 20px rgba(246,92,122,.4); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-sans); transition:all .3s ease; }
+        .btn-enter:hover { transform:scale(1.04); background:#e04b69; }
+
+        /* 2. HERO */
+        .hero { position:relative; height:62vh; min-height:430px; overflow:hidden; display:flex; align-items:flex-end; justify-content:center; background:url('hero-venue.jpg') center 35%/cover no-repeat, linear-gradient(135deg,#1f1f1f 0%,#2d1422 100%); }
+        .hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(31,31,31,.35), rgba(31,31,31,.88)); z-index:1; }
+        .hero-content { position:relative; z-index:2; text-align:center; padding:0 20px 70px; color:var(--white); max-width:860px; }
+        .hero-eyebrow { font-size:.8rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold-accent); font-weight:600; margin-bottom:14px; }
+        .hero-declare { font-family:var(--font-serif); font-size:1.15rem; font-style:italic; color:rgba(255,255,255,.82); margin-bottom:14px; }
+        .hero h1 { font-size:3.1rem; font-weight:700; line-height:1.08; text-shadow:0 3px 20px rgba(0,0,0,.6); margin-bottom:12px; }
+        .hero h1 sup { font-size:1rem; color:var(--gold-accent); }
+        .hero-sub { font-size:.95rem; letter-spacing:4px; text-transform:uppercase; font-weight:400; color:var(--primary-light); }
+
+        .container { max-width:1100px; margin:-80px auto 60px; position:relative; z-index:2; padding:0 20px; }
+        .quote-card { background:var(--white); border-radius:30px; box-shadow:0 30px 60px rgba(31,31,31,.08); padding:60px; border:1px solid var(--beige); }
+        @media (max-width:768px) { .quote-card{padding:30px 18px;border-radius:20px;} .hero h1{font-size:2rem;} .container{margin-top:-40px;padding:0 10px;} }
+
+        /* 4. LOGO PEG */
+        .venue-logo-wrap { text-align:center; margin-bottom:34px; }
+        .venue-logo-wrap a { display:inline-block; text-decoration:none; }
+        .venue-logo-wrap img { height:94px; width:auto; object-fit:contain; border:1px solid var(--beige); border-radius:16px; padding:12px 26px; background:var(--primary-dark); box-shadow:0 6px 18px rgba(0,0,0,.06); }
+        .venue-logo-wrap span { display:block; font-size:.72rem; color:var(--gray-text); text-transform:uppercase; letter-spacing:1.6px; font-weight:600; margin-top:10px; }
+
+        /* 3. HEADER INFO */
+        .header-info { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--beige); padding-bottom:35px; margin-bottom:40px; flex-wrap:wrap; gap:25px; }
+        .header-main { flex:1; min-width:280px; }
+        .header-main h2 { font-size:2.2rem; line-height:1.1; margin-bottom:12px; }
+        .header-main p { font-size:.95rem; color:var(--gray-text); max-width:600px; }
+        .badge-event { display:inline-flex; align-items:center; gap:8px; background:var(--soft-pink); color:var(--primary-pink); padding:6px 20px; border-radius:40px; font-size:.8rem; font-weight:700; margin-top:16px; text-transform:uppercase; letter-spacing:1.5px; }
+        .summary-boxes { display:flex; gap:12px; flex-wrap:wrap; }
+        .info-box { text-align:center; background:var(--background-light); padding:16px 20px; border-radius:16px; border:1px solid var(--beige); min-width:118px; flex:1; }
+        .info-box span { display:block; font-size:.66rem; color:var(--gray-text); text-transform:uppercase; letter-spacing:1.4px; font-weight:700; margin-bottom:6px; }
+        .info-box strong { display:block; font-size:1.5rem; font-family:var(--font-serif); }
+
+        .section-title { font-size:1.8rem; margin:48px 0 22px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--beige); padding-bottom:10px; }
+        .section-title i { color:var(--primary-pink); font-size:1.4rem; }
+        .section-intro { color:var(--gray-text); font-size:.95rem; margin-bottom:26px; max-width:760px; }
+        .lead-text { font-family:var(--font-serif); font-style:italic; font-size:1.25rem; color:var(--primary-pink); margin-bottom:18px; }
+        .body-text { color:var(--gray-text); font-size:.95rem; margin-bottom:16px; max-width:820px; }
+        .body-text strong { color:var(--primary-dark); font-weight:600; }
+
+        /* ECOSISTEMA */
+        .eco-wrap { display:grid; gap:34px; align-items:center; background:var(--background-light); border:1px solid var(--beige); border-radius:24px; padding:34px; }
+        @media (min-width:900px){ .eco-wrap { grid-template-columns:1fr 1fr; } }
+        .eco-svg { width:100%; max-width:460px; height:auto; display:block; margin:0 auto; }
+        .eco-svg .spoke { stroke:var(--gold-accent); stroke-width:1; opacity:.5; }
+        .eco-svg .node { fill:var(--white); stroke:var(--beige); stroke-width:1.5; }
+        .eco-svg .hub-ring { fill:none; stroke:var(--primary-pink); stroke-width:1.5; }
+        .eco-svg .hub { fill:var(--primary-dark); }
+        .eco-svg .nlabel { fill:var(--primary-dark); font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:600; letter-spacing:.04em; text-anchor:middle; }
+        .eco-svg .hlabel { fill:var(--gold-accent); font-family:'Playfair Display',serif; font-size:20px; font-weight:700; text-anchor:middle; }
+        .eco-svg .hsub { fill:rgba(255,255,255,.72); font-family:'Poppins',sans-serif; font-size:9.5px; letter-spacing:.16em; text-anchor:middle; }
+
+        /* PILARES — includes-grid de la plantilla */
+        .includes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; margin-bottom:20px; }
+        .include-item { background:var(--white); border:1px solid var(--beige); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
+        .include-img-container { width:100%; height:170px; overflow:hidden; }
+        .include-img { width:100%; height:100%; object-fit:cover; }
+        .include-content { padding:20px; flex:1; }
+        .include-num { font-size:.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold-accent); font-weight:700; display:block; margin-bottom:6px; }
+        .include-content h4 { font-size:1.15rem; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+        .include-content h4 i { color:var(--primary-pink); font-size:.95rem; }
+        .include-content > p { font-size:.85rem; color:var(--gray-text); margin-bottom:12px; }
+        .include-content ul { list-style:none; padding:0; margin:0; }
+        .include-content li { font-size:.82rem; color:var(--gray-text); padding-left:16px; position:relative; margin-bottom:6px; line-height:1.5; }
+        .include-content li::before { content:''; position:absolute; left:0; top:.62em; width:7px; height:1px; background:var(--gold-accent); }
+        .include-quote { margin-top:14px; padding-top:12px; border-top:1px solid var(--beige); font-family:var(--font-serif); font-style:italic; font-size:.92rem; color:var(--primary-pink); }
+
+        /* NIVELES */
+        .tier-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+        .tier-card { border:1px solid var(--beige); border-radius:20px; background:var(--white); padding:26px; display:flex; flex-direction:column; }
+        .tier-card.featured { border-color:var(--primary-pink); box-shadow:0 12px 30px rgba(246,92,122,.10); }
+        .tier-lvl { font-size:.66rem; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--gold-accent); margin-bottom:8px; }
+        .tier-card.featured .tier-lvl { color:var(--primary-pink); }
+        .tier-card h4 { font-size:1.35rem; margin-bottom:4px; }
+        .tier-mode { font-size:.7rem; letter-spacing:1.6px; text-transform:uppercase; color:var(--gray-text); font-weight:600; margin-bottom:14px; }
+        .tier-who { font-size:.83rem; color:var(--gray-text); margin-bottom:16px; min-height:3.4em; }
+        .tier-sub { font-size:.66rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; color:var(--gray-text); margin:16px 0 10px; padding-top:14px; border-top:1px solid var(--beige); }
+        .tier-card ul { list-style:none; padding:0; margin:0; }
+        .tier-card li { font-size:.82rem; color:var(--gray-text); padding-left:16px; position:relative; margin-bottom:7px; line-height:1.5; }
+        .tier-card li::before { content:''; position:absolute; left:0; top:.62em; width:7px; height:1px; background:var(--gold-accent); }
+        .tier-card li b { color:var(--primary-dark); font-weight:600; }
+        .tier-give { margin-top:auto; }
+        .tier-give li::before { background:var(--primary-pink); }
+
+        /* RESIDENCY — bloque oscuro tipo pricing-section */
+        .pricing-section { background:linear-gradient(135deg,var(--primary-dark) 0%,#2d1422 100%); border-radius:24px; padding:45px; margin-top:30px; color:var(--white); }
+        .pricing-section h3 { font-size:1.25rem; color:var(--gold-accent); margin-bottom:6px; text-transform:uppercase; letter-spacing:2px; }
+        .pricing-section > p { color:rgba(255,255,255,.72); font-size:.92rem; max-width:640px; margin-bottom:10px; }
+        .residency-title { font-family:var(--font-serif); font-size:2rem; margin:6px 0 14px; }
+        .residency-roles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,.14); }
+        .residency-roles h5 { font-size:.95rem; margin-bottom:8px; font-family:var(--font-sans); font-weight:600; display:flex; align-items:center; gap:8px; }
+        .residency-roles h5 i { color:var(--primary-light); }
+        .residency-roles p { font-size:.82rem; color:rgba(255,255,255,.7); line-height:1.6; }
+
+        /* META */
+        .venue-info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+        .venue-info-card { background:var(--background-light); border:1px solid var(--beige); border-radius:16px; padding:22px; }
+        .venue-info-card i { color:var(--primary-pink); font-size:1.25rem; margin-bottom:10px; display:block; }
+        .venue-info-card h5 { font-size:.9rem; font-weight:600; margin-bottom:7px; font-family:var(--font-sans); }
+        .venue-info-card p { font-size:.82rem; color:var(--gray-text); line-height:1.6; }
+
+        /* TABLAS */
+        .pricing-table-container { margin-bottom:20px; overflow-x:auto; border-radius:16px; border:1px solid var(--beige); }
+        .pricing-table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; min-width:560px; }
+        .pricing-table th { background:var(--primary-pink); color:var(--white); padding:15px 20px; font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:1px; }
+        .pricing-table td { padding:15px 20px; border-bottom:1px solid var(--beige); vertical-align:middle; }
+        .pricing-table tr:nth-child(even) { background:rgba(246,92,122,.02); }
+        .pricing-table a { color:var(--primary-pink); text-decoration:none; font-weight:500; }
+        .pricing-table a:hover { text-decoration:underline; }
+        .status-pill { display:inline-block; font-size:.68rem; letter-spacing:1px; text-transform:uppercase; font-weight:700; padding:5px 13px; border-radius:40px; }
+        .status-pill.abierta { background:var(--soft-pink); color:var(--primary-pink); }
+        .status-pill.eval { background:rgba(201,169,110,.18); color:#8a6f3d; }
+        .status-pill.asignada { background:var(--beige); color:var(--gray-text); }
+        .table-note { font-size:.76rem; color:var(--gray-text); margin-top:-8px; margin-bottom:10px; }
+
+        /* GALERIA */
+        .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+        .gallery-grid img { width:100%; height:230px; object-fit:cover; border-radius:16px; border:1px solid var(--beige); }
+
+        /* CRITERIOS */
+        .criteria-list { list-style:none; padding:0; margin:0; }
+        .criteria-list li { display:flex; gap:16px; align-items:baseline; padding:15px 0; border-bottom:1px solid var(--beige); }
+        .criteria-list li:first-child { border-top:1px solid var(--beige); }
+        .criteria-list .num { color:var(--gold-accent); font-weight:700; font-size:.85rem; flex:0 0 auto; }
+        .criteria-list p { font-size:.9rem; color:var(--gray-text); margin:0; }
+        .criteria-list p b { color:var(--primary-dark); font-weight:600; }
+
+        /* EXPO / ACTIVACIONES */
+        .expo-section { margin-top:50px; }
+        .expo-card { background:linear-gradient(135deg,#1a1a1a 0%,#333 100%); border-radius:24px; display:flex; overflow:hidden; color:white; box-shadow:0 20px 40px rgba(0,0,0,.2); align-items:stretch; flex-wrap:wrap; }
+        .expo-content { padding:40px; flex:1; min-width:260px; }
+        .expo-badge { background:var(--primary-pink); padding:6px 15px; border-radius:50px; font-size:.75rem; text-transform:uppercase; font-weight:600; letter-spacing:1px; display:inline-block; margin-bottom:18px; }
+        .expo-content h3 { font-size:1.7rem; margin-bottom:12px; line-height:1.2; }
+        .expo-content p { color:#ccc; margin-bottom:22px; font-size:.93rem; }
+        .btn-expo { background:white; color:var(--primary-dark); padding:12px 26px; border-radius:50px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; font-weight:600; transition:all .3s ease; }
+        .btn-expo:hover { background:var(--primary-pink); color:white; transform:scale(1.05); }
+        .expo-img-box { flex:1; min-width:220px; overflow:hidden; }
+        .expo-img-box img { width:100%; height:100%; object-fit:cover; min-height:210px; }
+
+        /* PUBLICIDAD (#10 obligatoria) */
+        .publicidad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px; }
+        .publicidad-card { display:block; border-radius:18px; overflow:hidden; border:1px solid var(--beige); transition:transform .3s ease; }
+        .publicidad-card:hover { transform:translateY(-4px); }
+        .publicidad-card img { width:100%; height:250px; object-fit:cover; display:block; }
+
+        /* KIT PLANNER (#11 obligatoria) */
+        .kit-section { margin-top:50px; background:linear-gradient(135deg,var(--primary-dark) 0%,#2d1422 100%); border-radius:20px; padding:40px; color:white; display:flex; flex-wrap:wrap; align-items:center; gap:30px; }
+        .kit-content { flex:1; min-width:250px; }
+        .kit-badge { background:var(--gold-accent); display:inline-block; padding:4px 12px; border-radius:50px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; color:var(--primary-dark); }
+        .kit-content h3 { font-size:1.6rem; margin-bottom:8px; }
+        .kit-content p { color:rgba(255,255,255,.7); font-size:.85rem; }
+        .kit-buttons { display:flex; flex-direction:column; gap:10px; }
+        .btn-kit { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:50px; font-weight:600; font-size:.8rem; text-decoration:none; background:var(--primary-pink); color:white; white-space:nowrap; }
+
+        /* NOTAS / TRANSPARENCIA (#14) */
+        .notes-section { margin-top:44px; padding:32px; border:1px solid var(--beige); border-radius:20px; background:var(--white); border-left:4px solid var(--primary-pink); }
+        .notes-section h3 { font-size:1.3rem; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+        .notes-section h3 i { color:var(--primary-pink); }
+        .notes-section p { color:var(--gray-text); font-size:.88rem; margin-bottom:12px; }
+        .notes-section p strong { color:var(--primary-dark); font-weight:600; }
+        .quote-phrase { font-style:italic; color:var(--primary-pink); font-weight:600; margin-top:16px !important; text-align:center; }
+
+        /* FIRMA (#13) */
+        .signature-section { text-align:center; margin-top:44px; }
+        .signature-section video { max-width:280px; width:100%; height:auto; mix-blend-mode:multiply; }
+
+        /* CTA (#15) */
+        .cta-container { text-align:center; margin-top:50px; padding:44px 22px; background:var(--beige); border-radius:20px; }
+        .cta-container h3 { font-size:1.7rem; margin-bottom:10px; }
+        .cta-container p { margin-bottom:22px; font-style:italic; font-weight:500; font-size:.95rem; color:var(--gray-text); }
+        .btn-wa { background:#25D366; color:white; padding:14px 35px; border-radius:50px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; font-weight:600; }
+        .cta-links { margin-top:22px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+        .cta-links a { font-size:.8rem; color:var(--gray-text); text-decoration:none; border:1px solid var(--beige); background:var(--white); padding:8px 18px; border-radius:40px; }
+        .cta-links a:hover { border-color:var(--primary-pink); color:var(--primary-pink); }
+
+        /* FLOATING ACTIONS */
+        .floating-actions-container { position:fixed; bottom:15px; right:15px; z-index:1000; display:flex; flex-direction:column; align-items:flex-end; gap:15px; }
+        .fab-group { display:flex; flex-direction:column; align-items:flex-end; position:relative; }
+        .fab-main { width:50px; height:50px; border-radius:50%; background:var(--white); border:none; color:var(--primary-pink); font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center; position:relative; transition:all .4s cubic-bezier(.175,.885,.32,1.275); box-shadow:0 6px 18px rgba(0,0,0,.15); z-index:2; }
+        .fab-main:hover { transform:scale(1.1) translateY(-5px); }
+        .fab-label { position:absolute; right:65px; background:var(--white); color:var(--primary-dark); padding:6px 12px; border-radius:20px; font-size:.8rem; white-space:nowrap; box-shadow:0 4px 10px rgba(0,0,0,.1); opacity:0; visibility:hidden; transition:all .3s ease; font-weight:500; pointer-events:none; }
+        .fab-main:hover .fab-label { opacity:1; visibility:visible; right:60px; }
+        .fab-menu { display:flex; flex-direction:column-reverse; gap:8px; position:absolute; bottom:100%; right:5px; opacity:0; visibility:hidden; transform:translateY(20px); transition:all .4s cubic-bezier(.175,.885,.32,1.275); margin-bottom:10px; pointer-events:none; z-index:1; }
+        .fab-group.active .fab-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+        .fab-item { width:40px; height:40px; border-radius:50%; background:var(--white); color:var(--primary-pink); display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:1.1rem; box-shadow:0 4px 12px rgba(0,0,0,.1); transition:all .3s ease; }
+        .fab-item:hover { background:var(--primary-pink); color:var(--white); transform:scale(1.15); }
+        .fab-group.active .fab-main { transform:rotate(15deg) scale(.9); filter:brightness(1.2); }
+
+        .audio-toggle { position:fixed; bottom:20px; left:20px; z-index:1000; width:40px; height:40px; border-radius:50%; background:var(--white); border:1px solid var(--beige); color:var(--primary-pink); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.1); }
+
+        footer { padding:50px 20px; background:var(--white); border-top:1px solid var(--beige); text-align:center; margin-top:60px; }
+        .footer-container { max-width:800px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:12px; }
+        .footer-logo { width:64px; height:64px; border-radius:50%; object-fit:contain; border:2px solid var(--gold-accent); background:var(--primary-dark); padding:6px; }
+        .footer-container a { color:var(--gray-text); text-decoration:none; font-size:.85rem; }
+        .footer-container a:hover { color:var(--primary-pink); }
+        .footer-bottom { margin-top:25px; padding-top:15px; border-top:1px solid var(--beige); font-size:.72rem; color:var(--gray-text); width:100%; }
+
+        /* PRINT — DIRECTIVES.md seccion 9 */
+        @media print {
+            #preloader, .floating-actions-container, .kit-section, .cta-container, audio, .audio-toggle,
+            .expo-section, .publicidad-section, .signature-section, .gallery-grid, footer, .eco-svg { display:none !important; }
+            .include-item, .tier-card, .venue-info-card, .notes-section, .pricing-section { page-break-inside:avoid !important; break-inside:avoid !important; }
+            h2, h3, h4, .section-title { page-break-after:avoid !important; break-after:avoid !important; }
+            body { background:white !important; font-size:9pt; color:#000; }
+            .container { margin:0 !important; padding:0 !important; max-width:100% !important; }
+            .quote-card { box-shadow:none !important; padding:0 !important; border:none !important; }
+            .pricing-section { background:#FAF8F6 !important; color:#000 !important; border:1px solid var(--beige) !important; }
+            .pricing-section h3, .residency-title { color:var(--primary-pink) !important; }
+            .residency-roles p, .pricing-section > p { color:#333 !important; }
+            @page { margin:1.5cm 1.2cm; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ 1. PRELOADER ═══ -->
+<div id="preloader">
+    <video id="preloaderVideo" autoplay muted loop playsinline preload="auto">
+        <source src="precarga.mp4" type="video/mp4">
+    </video>
+    <div class="preloader-overlay">
+        <img src="primavera-events-group-logo.png" alt="Primavera Events Group" class="preloader-logo">
+        <h2 class="preloader-title">Primavera Venue Partners<sup style="font-size:.5rem">™</sup></h2>
+        <p class="preloader-text">Alianza estratégica de crecimiento y comercialización para salones y jardines de Morelos.</p>
+        <button id="btnEnter" class="btn-enter">Conocer el programa</button>
+    </div>
+</div>
+<audio id="bgAudio" loop preload="auto"><source src="marcasonora.mp3" type="audio/mpeg"></audio>
+<button class="audio-toggle" id="audioToggle" title="Activar/Silenciar música"><i class="fas fa-volume-mute"></i></button>
+
+<!-- ═══ 2. HERO ═══ -->
+<header class="hero">
+    <div class="hero-content">
+        <p class="hero-eyebrow">Alianza Estratégica de Venues · Morelos</p>
+        <p class="hero-declare">No somos una agencia. Somos tu partner de crecimiento.</p>
+        <h1>Primavera Venue Partners<sup>™</sup></h1>
+        <p class="hero-sub">Strategic Growth &amp; Marketing Alliance</p>
+    </div>
+</header>
+
+<div class="container">
+<div class="quote-card">
+
+    <!-- ═══ 4. LOGO ═══ -->
+    <div class="venue-logo-wrap">
+        <a href="https://primaveraeventsgroup.com/" target="_blank" rel="noopener">
+            <img src="primavera-events-group-logo.png" alt="Primavera Events Group">
+        </a>
+        <span>Primavera Events Group® · El placer de servir</span>
+    </div>
+
+    <!-- ═══ 3. HEADER INFO ═══ -->
+    <div class="header-info">
+        <div class="header-main">
+            <h2>Tú operas el venue.<br>Nosotros ayudamos a hacerlo crecer.</h2>
+            <p>Una alianza entre venues, especialistas y Primavera Events Group para posicionar, comercializar y conectar tu espacio con la demanda. Y si tu venue ya tiene equipo de marketing, no lo sustituimos: lo integramos al ecosistema para multiplicar su capacidad.</p>
+            <div class="badge-event"><i class="fas fa-handshake"></i> Programa de Aliados Estratégicos</div>
+        </div>
+        <div class="summary-boxes">
+            <div class="info-box"><span>Cartera</span><strong>20</strong></div>
+            <div class="info-box"><span>Con estructura</span><strong>7</strong></div>
+            <div class="info-box"><span>Pilares</span><strong>5</strong></div>
+            <div class="info-box"><span>Por zona</span><strong>1</strong></div>
+        </div>
+    </div>
+
+    <!-- ═══ PLANTEAMIENTO ═══ -->
+    <h3 class="section-title"><i class="fas fa-lightbulb"></i> El planteamiento</h3>
+    <p class="lead-text">La mayoría de los espacios en Morelos no tiene un problema de calidad. Tiene un problema de comercialización.</p>
+    <p class="body-text">Se invierte en jardín, cocina, iluminación y estacionamiento — y luego se espera a que alguien pase, pregunte y decida. Las fotos viven en un celular, el precio en un WhatsApp y la disponibilidad en la cabeza del dueño. El producto es bueno; lo que falta es una estructura que lo venda todos los días.</p>
+    <p class="body-text"><strong>Primavera Venue Partners no es un servicio de redes sociales.</strong> Es una alianza de crecimiento y comercialización donde el marketing es apenas uno de cinco componentes — junto a generación de demanda, capacidad digital, producción de contenido y acceso a una red de eventos y proveedores.</p>
+
+    <!-- ═══ ECOSISTEMA ═══ -->
+    <h3 class="section-title"><i class="fas fa-project-diagram"></i> ¿Qué pasa cuando un venue se une?</h3>
+    <div class="eco-wrap">
+        <svg class="eco-svg" viewBox="0 0 640 640" role="img" aria-label="Ecosistema Primavera: al centro Primavera Events Group, conectada con venue, marketing, contenido, tecnología, eventos, proveedores y demanda.">
+            <g class="spoke">
+                <line x1="320" y1="320" x2="320" y2="102"></line>
+                <line x1="320" y1="320" x2="490" y2="184"></line>
+                <line x1="320" y1="320" x2="533" y2="369"></line>
+                <line x1="320" y1="320" x2="415" y2="516"></line>
+                <line x1="320" y1="320" x2="225" y2="516"></line>
+                <line x1="320" y1="320" x2="107" y2="369"></line>
+                <line x1="320" y1="320" x2="150" y2="184"></line>
+            </g>
+            <circle class="node" cx="320" cy="102" r="56"></circle>
+            <circle class="node" cx="490" cy="184" r="56"></circle>
+            <circle class="node" cx="533" cy="369" r="56"></circle>
+            <circle class="node" cx="415" cy="516" r="56"></circle>
+            <circle class="node" cx="225" cy="516" r="56"></circle>
+            <circle class="node" cx="107" cy="369" r="56"></circle>
+            <circle class="node" cx="150" cy="184" r="56"></circle>
+            <circle class="hub-ring" cx="320" cy="320" r="98"></circle>
+            <circle class="hub" cx="320" cy="320" r="88"></circle>
+            <text class="nlabel" x="320" y="107">VENUE</text>
+            <text class="nlabel" x="490" y="189">MARKETING</text>
+            <text class="nlabel" x="533" y="374">CONTENIDO</text>
+            <text class="nlabel" x="415" y="521">TECNOLOGÍA</text>
+            <text class="nlabel" x="225" y="521">EVENTOS</text>
+            <text class="nlabel" x="107" y="365" style="font-size:11px">PROVEE-</text>
+            <text class="nlabel" x="107" y="380" style="font-size:11px">DORES</text>
+            <text class="nlabel" x="150" y="189">DEMANDA</text>
+            <text class="hlabel" x="320" y="314">Primavera</text>
+            <text class="hsub" x="320" y="336">EVENTS GROUP</text>
+        </svg>
+        <div>
+            <p class="lead-text">No buscamos tener todos los venues de Morelos. Buscamos tener los venues correctos.</p>
+            <p class="body-text">Cada evento producido en tu espacio genera contenido. Ese contenido alimenta campañas. Las campañas generan prospectos. Los prospectos se atienden con cotizador, seguimiento y CRM. Y quienes cierran vuelven a producir contenido — <strong>en tu venue</strong>.</p>
+            <p class="body-text">Al mismo tiempo entras a una red de proveedores verificados, activaciones de marca y colaboraciones cruzadas con otros venues. Un aliado no compite con otro: se complementan por zona y por perfil.</p>
+            <p class="body-text">Eso es lo que una agencia digital no puede ofrecerte: <strong>no tiene eventos propios, ni red de proveedores, ni demanda que ya está fluyendo.</strong></p>
+        </div>
+    </div>
+
+    <!-- ═══ 5 PILARES ═══ -->
+    <h3 class="section-title"><i class="fas fa-layer-group"></i> Los cinco pilares de la alianza</h3>
+    <p class="section-intro">El marketing es uno de los cinco. Ninguno funciona solo — la ventaja está en que operen juntos sobre el mismo espacio.</p>
+    <div class="includes-grid">
+
+        <div class="include-item">
+            <div class="include-img-container"><img src="pilar-visibility.jpg" alt="Montaje de mesa en detalle" class="include-img"></div>
+            <div class="include-content">
+                <span class="include-num">Pilar 01</span>
+                <h4><i class="fas fa-eye"></i> Visibility</h4>
+                <p>Tu venue deja de depender de que alguien pase por enfrente.</p>
+                <ul>
+                    <li>Página individual optimizada dentro del ecosistema Primavera.</li>
+                    <li>Integración a paquetes y propuestas comerciales activas.</li>
+                    <li>Publicaciones estratégicas, reels y contenido audiovisual.</li>
+                    <li>Cobertura profesional de cada evento en tu espacio.</li>
+                    <li>Campañas de temporada: bodas, XV años, graduaciones, corporativo.</li>
+                    <li>Cross-promotion con los demás venues de la red.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="include-item">
+            <div class="include-img-container"><img src="serv-staffing.jpg" alt="Equipo de servicio profesional" class="include-img"></div>
+            <div class="include-content">
+                <span class="include-num">Pilar 02</span>
+                <h4><i class="fas fa-bullseye"></i> Lead Generation</h4>
+                <p>Primavera no solamente publica. Genera demanda y la administra hasta el cierre.</p>
+                <ul>
+                    <li>Campañas segmentadas por zona, intención y momento del embudo.</li>
+                    <li>Landing pages, formularios y cotizadores propios.</li>
+                    <li>Captación, calificación y distribución de prospectos.</li>
+                    <li>Seguimiento comercial estructurado con CRM.</li>
+                    <li>Remarketing sobre quienes mostraron interés y no cerraron.</li>
+                    <li>Optimización continua por costo por prospecto calificado.</li>
+                </ul>
+                <p class="include-quote">No buscamos solamente que más personas conozcan tu venue. Buscamos que más personas consideren reservarlo.</p>
+            </div>
+        </div>
+
+        <div class="include-item">
+            <div class="include-img-container"><img src="pilar-growth.jpg" alt="Vista aérea de la pista de baile" class="include-img"></div>
+            <div class="include-content">
+                <span class="include-num">Pilar 03</span>
+                <h4><i class="fas fa-chart-line"></i> Digital Growth</h4>
+                <p>Capacidad técnica que un venue rara vez tiene internamente.</p>
+                <ul>
+                    <li>Estrategia digital y SEO por el nombre propio del venue.</li>
+                    <li>Google Business Profile y presencia en mapas.</li>
+                    <li>Meta Business Suite y Meta Ads operados por perfil certificado.</li>
+                    <li>Analítica, medición y atribución del recorrido completo.</li>
+                    <li>Automatización de seguimiento y respuesta por palabra clave.</li>
+                    <li>Inteligencia artificial aplicada a atención y conversión.</li>
+                    <li>Integración de herramientas y CRM entre ambas estructuras.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="include-item">
+            <div class="include-img-container"><img src="pilar-content.jpg" alt="Barra de mixología montada" class="include-img"></div>
+            <div class="include-content">
+                <span class="include-num">Pilar 04</span>
+                <h4><i class="fas fa-camera-retro"></i> Content &amp; Media</h4>
+                <p>Tu venue no solamente aparece. Se presenta.</p>
+                <ul>
+                    <li>Fotografía profesional con corrección editorial de lote completo.</li>
+                    <li>Video, reels y piezas cortas para redes y campañas.</li>
+                    <li>Tomas aéreas 4K cuando el espacio lo amerita.</li>
+                    <li>Contenido gastronómico, de montaje y de boda.</li>
+                    <li>Entrevistas y testimoniales de clientes reales.</li>
+                    <li>Streaming y transmisiones especiales durante el evento.</li>
+                </ul>
+                <p class="include-quote">El mismo contenido trabaja para tu marca y para la nuestra. Ahí está la sinergia real.</p>
+            </div>
+        </div>
+
+        <div class="include-item">
+            <div class="include-img-container"><img src="serv-activaciones.jpg" alt="Activaciones y letras gigantes" class="include-img"></div>
+            <div class="include-content">
+                <span class="include-num">Pilar 05</span>
+                <h4><i class="fas fa-star"></i> Network &amp; Events</h4>
+                <p>La ventaja que una agencia digital no puede darte.</p>
+                <ul>
+                    <li>Expo Boda y 15 Años — edición anual en el CC Presidente.</li>
+                    <li>Primavera Haute Runway — pasarela nupcial y de XV años.</li>
+                    <li>Activaciones, degustaciones y producciones en sede del aliado.</li>
+                    <li>Networking con proveedores verificados del padrón Primavera.</li>
+                    <li>Colaboraciones entre venues y campañas cruzadas.</li>
+                    <li>Alianzas con marcas para producciones conjuntas.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ═══ NIVELES ═══ -->
+    <h3 class="section-title"><i class="fas fa-award"></i> Primavera Venue Network</h3>
+    <p class="section-intro">La red es curada: no entra cualquiera. Cada nivel combina una designación dentro del ecosistema y una modalidad de trabajo. Empezar en el primero y subir después es perfectamente válido.</p>
+    <div class="tier-grid">
+
+        <div class="tier-card">
+            <div class="tier-lvl">Nivel I</div>
+            <h4>Venue Partner</h4>
+            <p class="tier-mode">Modalidad · Partner</p>
+            <p class="tier-who">Para venues que ya tienen equipo propio y buscan alcance, red y oportunidades comerciales.</p>
+            <div class="tier-sub">Primavera aporta</div>
+            <ul>
+                <li><b>Comercialización</b> e inclusión en propuestas activas.</li>
+                <li><b>Red de aliados</b> y proveedores verificados.</li>
+                <li><b>Exposición</b> dentro del ecosistema de venues.</li>
+                <li><b>Participación en eventos</b> y campañas colaborativas.</li>
+                <li><b>Contenido compartido</b> y cross-promotion.</li>
+            </ul>
+            <div class="tier-give">
+                <div class="tier-sub">El venue conserva</div>
+                <ul>
+                    <li>Su equipo sigue operando su propio marketing.</li>
+                    <li>Sin exclusividad. Total libertad comercial.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tier-card">
+            <div class="tier-lvl">Nivel II</div>
+            <h4>Preferred Venue</h4>
+            <p class="tier-mode">Modalidad · Growth Partner</p>
+            <p class="tier-who">Para venues que quieren crecer pero necesitan estructura que hoy no tienen dentro.</p>
+            <div class="tier-sub">Primavera participa en</div>
+            <ul>
+                <li><b>Estrategia digital y posicionamiento</b> del venue.</li>
+                <li><b>Redes, contenido y publicidad</b> con calendario definido.</li>
+                <li><b>SEO</b> y página propia optimizada.</li>
+                <li><b>Generación de leads</b>, cotización y seguimiento.</li>
+                <li><b>Paquete comercial</b> diseñado a la medida del espacio.</li>
+                <li><b>Planner asignado</b> para visitas y coordinación.</li>
+            </ul>
+            <div class="tier-give">
+                <div class="tier-sub">El venue compromete</div>
+                <ul>
+                    <li>Primavera como <b>operador preferente</b> de banquete y coordinación.</li>
+                    <li>Tarifa preferente de renta en eventos gestionados por la red.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tier-card featured">
+            <div class="tier-lvl">Nivel III · Uno por zona</div>
+            <h4>Strategic Venue Partner</h4>
+            <p class="tier-mode">Modalidad · Exclusive</p>
+            <p class="tier-who">Para venues que quieren delegar por completo su crecimiento comercial y digital.</p>
+            <div class="tier-sub">Primavera se vuelve tu brazo comercial</div>
+            <ul>
+                <li>Todo lo del Nivel II, más:</li>
+                <li><b>Primavera Venue Residency™</b> — equipo residente asignado.</li>
+                <li><b>Gestión integral de redes</b>, contenido y campañas.</li>
+                <li><b>Landing, SEO, CRM y estrategia comercial</b> completos.</li>
+                <li><b>Coinversión publicitaria</b> e integración técnica de activos.</li>
+                <li><b>Producción ampliada</b>: dron 4K y transmisión en vivo.</li>
+                <li><b>Sede candidata</b> para Expo, pasarela y activaciones.</li>
+            </ul>
+            <div class="tier-give">
+                <div class="tier-sub">El venue compromete</div>
+                <ul>
+                    <li>Ser el <b>venue estratégico de Primavera en su zona de influencia</b>.</li>
+                    <li>Calendario compartido y coinversión acordada.</li>
+                    <li>Vigencia definida, con piso de desempeño y salida clara.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ═══ RESIDENCY ═══ -->
+    <div class="pricing-section">
+        <h3>Modalidad premium · incluida en el Nivel III</h3>
+        <div class="residency-title">Primavera Venue Residency<sup style="font-size:.9rem;color:var(--gold-accent)">™</sup></div>
+        <p>Residency no significa que Primavera trabaje físicamente en tu espacio todos los días. Significa que existe un equipo asignado —con nombre y responsabilidad definida— dedicado al crecimiento comercial de tu venue de forma continua.</p>
+        <p>El venue deja de contratar servicios sueltos y pasa a tener una estructura estable trabajando sobre su marca.</p>
+        <div class="residency-roles">
+            <div>
+                <h5><i class="fas fa-user-tie"></i> Resident Planner</h5>
+                <p>Wedding &amp; event planner certificado asignado a tu espacio. Atiende visitas de prospectos, arma croquis y minuto a minuto, y coordina el día del evento. Tu venue deja de necesitar planner propio.</p>
+            </div>
+            <div>
+                <h5><i class="fas fa-rocket"></i> Growth &amp; Marketing Lead</h5>
+                <p>Estrategia, calendario editorial, pauta y reporte mensual sobre tu marca — no una plantilla compartida entre veinte clientes.</p>
+            </div>
+            <div>
+                <h5><i class="fas fa-video"></i> Unidad de producción</h5>
+                <p>Fotografía, video, dron y transmisión. Convierte cada evento realizado en tu espacio en material comercial permanente y organizado.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ INTEGRACIÓN TÉCNICA ═══ -->
+    <h3 class="section-title"><i class="fas fa-plug"></i> ¿Ya tienes equipo? No lo sustituimos: lo integramos</h3>
+    <p class="section-intro">Para venues con estructura propia se integran los activos y las herramientas de ambos lados, con permisos explícitos y reversibles. Nadie entrega contraseñas.</p>
+    <div class="venue-info-grid">
+        <div class="venue-info-card"><i class="fas fa-share-nodes"></i><h5>Compartición de activos entre portafolios</h5><p>Tu portafolio empresarial y el nuestro se vinculan como socios. Páginas, cuentas publicitarias y catálogos se comparten con permisos granulares por activo, revocables en cualquier momento.</p></div>
+        <div class="venue-info-card"><i class="fas fa-users"></i><h5>Publicaciones colaborativas</h5><p>Un mismo reel o carrusel se publica en ambas cuentas como coautoría. Un solo contenido, dos audiencias, métricas unificadas.</p></div>
+        <div class="venue-info-card"><i class="fas fa-tag"></i><h5>Contenido de marca</h5><p>Etiquetado formal de socio comercial con permiso de promoción pagada, para que cualquiera de los dos impulse la publicación del otro con presupuesto propio.</p></div>
+        <div class="venue-info-card"><i class="fas fa-crosshairs"></i><h5>Píxel y API de Conversiones</h5><p>Eventos compartidos entre sitios para medir el recorrido completo del prospecto — de la página del venue a la cotización enviada.</p></div>
+        <div class="venue-info-card"><i class="fas fa-people-group"></i><h5>Audiencias personalizadas y similares</h5><p>Audiencias construidas con el tráfico e interacción de ambas marcas, y públicos similares derivados de clientes que ya contrataron.</p></div>
+        <div class="venue-info-card"><i class="fas fa-inbox"></i><h5>Intercambio operativo</h5><p>Bandeja unificada, automatizaciones por palabra clave y traspaso de sistemas: plantillas de cotización, croquis, minuto a minuto y protocolo de atención.</p></div>
+    </div>
+
+    <!-- ═══ COBERTURA ═══ -->
+    <h3 class="section-title"><i class="fas fa-map-location-dot"></i> Cobertura estatal</h3>
+    <p class="section-intro">Un venue estratégico por zona de influencia, para que dos aliados nunca compitan por el mismo cliente. Los niveles I y II permanecen abiertos en toda zona; el Nivel III es el que se asigna territorialmente.</p>
+    <div class="pricing-table-container">
+        <table class="pricing-table">
+            <thead><tr><th>Zona de influencia</th><th>Nivel III</th><th>Nota</th></tr></thead>
+            <tbody>
+                <tr><td>Cuernavaca</td><td><span class="status-pill asignada">Asignada</span></td><td>Centro de Convenciones Presidente</td></tr>
+                <tr><td>Temixco</td><td><span class="status-pill asignada">Asignada</span></td><td>Quinta Zarabanda · Yolomecatl</td></tr>
+                <tr><td>Xochitepec</td><td><span class="status-pill asignada">Asignada</span></td><td>Finca Las Isabeles</td></tr>
+                <tr><td>Jiutepec</td><td><span class="status-pill eval">En evaluación</span></td><td>Conversaciones abiertas</td></tr>
+                <tr><td>Yautepec · Oaxtepec</td><td><span class="status-pill eval">En evaluación</span></td><td>Conversaciones abiertas</td></tr>
+                <tr><td>Emiliano Zapata</td><td><span class="status-pill abierta">Abierta</span></td><td>Sin venue estratégico asignado</td></tr>
+                <tr><td>Cuautla</td><td><span class="status-pill abierta">Abierta</span></td><td>Sin venue estratégico asignado</td></tr>
+                <tr><td>Tepoztlán</td><td><span class="status-pill abierta">Abierta</span></td><td>Sin venue estratégico asignado</td></tr>
+                <tr><td>Tequesquitengo · Puente de Ixtla</td><td><span class="status-pill abierta">Abierta</span></td><td>Sin venue estratégico asignado</td></tr>
+                <tr><td>Zacatepec · Jojutla</td><td><span class="status-pill abierta">Abierta</span></td><td>Sin venue estratégico asignado</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="table-note">Estatus al 8 de septiembre de 2026. Una zona asignada sigue recibiendo Venue Partners y Preferred Venues de perfil complementario — nunca competidores directos.</p>
+
+    <!-- ═══ RED ACTUAL ═══ -->
+    <h3 class="section-title"><i class="fas fa-building-columns"></i> Espacios ya incorporados</h3>
+    <p class="section-intro">Cada uno con página propia y paquete comercial diseñado. Así se vería tu espacio dentro del sistema.</p>
+    <div class="pricing-table-container">
+        <table class="pricing-table">
+            <thead><tr><th>Venue</th><th>Municipio</th><th>Paquete asociado</th></tr></thead>
+            <tbody>
+                <tr><td><a href="https://primaveraeventsgroup.com/centro-de-convenciones-presidente/" target="_blank" rel="noopener">Centro de Convenciones Presidente</a></td><td>Cuernavaca</td><td><a href="https://primaveraeventsgroup.com/paquete-presidente/" target="_blank" rel="noopener">Presidente</a> · <a href="https://primaveraeventsgroup.com/paquete-gobernador/" target="_blank" rel="noopener">Gobernador</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/quinta-zarabanda/" target="_blank" rel="noopener">Quinta Zarabanda</a></td><td>Temixco</td><td><a href="https://primaveraeventsgroup.com/paquete-armonia/" target="_blank" rel="noopener">Armonía</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/finca-las-isabeles/" target="_blank" rel="noopener">Finca Las Isabeles</a></td><td>Xochitepec</td><td><a href="https://primaveraeventsgroup.com/paquete-natures-majesty/" target="_blank" rel="noopener">Nature's Majesty</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/jardin-tsu-nuum/" target="_blank" rel="noopener">Jardín Tsu Nuum</a></td><td>Morelos</td><td><a href="https://primaveraeventsgroup.com/paquete-vuelo-esmeralda/" target="_blank" rel="noopener">Vuelo Esmeralda</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/salon-jardin-yolomecatl/" target="_blank" rel="noopener">Salón Jardín Yolomecatl</a></td><td>Temixco</td><td><a href="https://primaveraeventsgroup.com/paquete-destino-yolomecatl/" target="_blank" rel="noopener">Destino Yolomecatl</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/salon-los-caballos/" target="_blank" rel="noopener">Salón Los Caballos</a></td><td>Morelos</td><td><a href="https://primaveraeventsgroup.com/paquete-imperial-ecuestre/" target="_blank" rel="noopener">Imperial Ecuestre</a></td></tr>
+                <tr><td><a href="https://primaveraeventsgroup.com/salon-los-potrillos/" target="_blank" rel="noopener">Salón Los Potrillos</a></td><td>Morelos</td><td><a href="https://primaveraeventsgroup.com/paquete-linaje-pura-sangre/" target="_blank" rel="noopener">Linaje Pura Sangre</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="table-note">Cartera total: 20 espacios en Morelos. Los 7 listados operan hoy con página propia y paquete diseñado.</p>
+
+    <!-- ═══ GALERÍA ═══ -->
+    <h3 class="section-title"><i class="fas fa-images"></i> Producción real en nuestros venues</h3>
+    <p class="section-intro">Material producido por nuestra unidad audiovisual en eventos reales. Esto es lo que tu espacio recibiría de cada evento.</p>
+    <div class="gallery-grid">
+        <img src="galeria-1.jpg" alt="Ceremonia al aire libre">
+        <img src="galeria-2.jpg" alt="Cóctel de bienvenida">
+        <img src="galeria-3.jpg" alt="Momento de coronación">
+        <img src="serv-montaje.jpg" alt="Centro de mesa floral">
+    </div>
+
+    <!-- ═══ ACTIVACIONES / EXPO ═══ -->
+    <div class="expo-section">
+        <h3 class="section-title"><i class="fas fa-bullhorn"></i> Activaciones propias</h3>
+        <p class="section-intro">No esperamos la temporada. La producimos — y llevamos a nuestros aliados dentro.</p>
+        <div class="expo-card">
+            <div class="expo-content">
+                <span class="expo-badge">Edición anual</span>
+                <h3>Expo Boda y 15 Años</h3>
+                <p>Feria comercial producida por Primavera Events Group en el Centro de Convenciones Presidente, con directorio de expositores, media kit conjunto y contacto directo con familias que ya están decidiendo. Súmale la pasarela <strong>Primavera Haute Runway</strong>, que genera material de alto prestigio para todos los aliados participantes durante meses.</p>
+                <a href="https://primaveraeventsgroup.com/expo-boda-y-quince-anos-centro-de-convenciones-presidente/" class="btn-expo" target="_blank" rel="noopener">
+                    <i class="fas fa-arrow-right"></i> Conocer la Expo
+                </a>
+            </div>
+            <div class="expo-img-box"><img src="pilar-network.jpg" alt="Equipo Primavera Events Group en activación"></div>
+        </div>
+    </div>
+
+    <!-- ═══ 10. PUBLICIDAD (obligatoria) ═══ -->
+    <div class="publicidad-section">
+        <h3 class="section-title"><i class="fas fa-star"></i> Las verticales que comercializamos</h3>
+        <p class="section-intro">Tu espacio entra a los cuatro embudos comerciales que ya están activos y generando prospectos.</p>
+        <div class="publicidad-grid">
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" rel="noopener"><img src="pub-xv-anos.jpg" alt="XV Años Primavera"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/bodas/" target="_blank" rel="noopener"><img src="pub-bodas.jpg" alt="Bodas Primavera"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/graduaciones-primavera/" target="_blank" rel="noopener"><img src="pub-graduaciones.jpg" alt="Graduaciones Primavera"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener"><img src="pub-planning.jpg" alt="Wedding Planning con Jessy y Richard"></a>
+        </div>
+    </div>
+
+    <!-- ═══ CRITERIOS ═══ -->
+    <h3 class="section-title"><i class="fas fa-clipboard-check"></i> Criterios de incorporación</h3>
+    <p class="section-intro">La estructura que entregamos tiene un costo real de producción por espacio. Por eso la red es curada y la incorporación siempre empieza con una visita física.</p>
+    <ul class="criteria-list">
+        <li><span class="num">01</span><p><b>Capacidad y área techada verificables.</b> Cifras medidas en sitio, no estimaciones del folleto.</p></li>
+        <li><span class="num">02</span><p><b>Infraestructura operativa.</b> Cocina utilizable para catering profesional, sanitarios suficientes y estacionamiento propio o resuelto.</p></li>
+        <li><span class="num">03</span><p><b>Condiciones de horario claras.</b> Hora de cierre y restricciones de música definidas por escrito desde el inicio.</p></li>
+        <li><span class="num">04</span><p><b>Disponibilidad de calendario</b> compartida y actualizada, para comprometer fechas sin fricción.</p></li>
+        <li><span class="num">05</span><p><b>Claridad sobre el nivel</b> que se busca y la relación comercial que implica.</p></li>
+        <li><span class="num">06</span><p><b>Complemento con la red actual.</b> Un espacio que compite de frente con otro aliado del mismo perfil y zona no entra.</p></li>
+    </ul>
+
+    <!-- ═══ 11. KIT PLANNER (obligatoria) ═══ -->
+    <div class="kit-section">
+        <div class="kit-content">
+            <span class="kit-badge">Cortesía para aliados</span>
+            <h3>Kit Planner Primavera</h3>
+            <p>Plantilla de presupuesto y guía maestra de organización — las mismas herramientas que entregamos a las familias que celebran con nosotros, disponibles también para tu equipo.</p>
+        </div>
+        <div class="kit-buttons">
+            <a class="btn-kit" href="smart_event_planner_pro.xlsx" download><i class="fas fa-file-excel"></i> Descargar Excel</a>
+            <a class="btn-kit" href="guia_maestra_primavera.pdf" download><i class="fas fa-file-pdf"></i> Descargar Guía PDF</a>
+        </div>
+    </div>
+
+    <!-- ═══ 14. TRANSPARENCIA ═══ -->
+    <div class="notes-section">
+        <h3><i class="fas fa-scale-balanced"></i> Lo que sí comprometemos, y lo que no</h3>
+        <p>Nos comprometemos con <strong>generación de demanda, posicionamiento, exposición y desarrollo comercial</strong>: eso es lo que está bajo nuestro control y es lo que se mide mes con mes.</p>
+        <p>No garantizamos un número de eventos cerrados. <strong>El cierre depende también de tu precio, tu servicio, tu disponibilidad, el estado de tu producto y tu capacidad de respuesta.</strong> Trabajamos esos factores contigo y te decimos cuándo alguno está frenando el resultado — pero no los controlamos solos.</p>
+        <p class="quote-phrase">Una alianza que arranca con una promesa que nadie puede sostener termina mal para los dos.</p>
+    </div>
+
+    <!-- ═══ 13. FIRMA ═══ -->
+    <div class="signature-section">
+        <video id="videoFirma" autoplay muted loop playsinline preload="auto">
+            <source src="firma.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- ═══ 15. CTA ═══ -->
+    <div class="cta-container">
+        <h3>Si tu zona sigue abierta, con gusto conocemos tu venue.</h3>
+        <p>Envíanos municipio, capacidad, área techada y algunas fotografías del espacio. Si hay encaje, agendamos visita y te presentamos la propuesta por nivel — sin costo y sin compromiso.</p>
+        <a class="btn-wa" href="https://wa.me/527774587923?text=Hola%2C%20me%20interesa%20el%20programa%20Primavera%20Venue%20Partners%20para%20mi%20venue." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quiero ser Venue Partner</a>
+        <div class="cta-links">
+            <a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener">Richard Hernández</a>
+            <a href="https://primaveraeventsgroup.com/jessy/" target="_blank" rel="noopener">Jessy Sandoval</a>
+            <a href="https://primaveraeventsgroup.com/venues/" target="_blank" rel="noopener">Catálogo de venues</a>
+            <a href="https://g.page/r/CRYo3lgLK8NEEBM/review" target="_blank" rel="noopener">Reseñas en Google</a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- ═══ FLOATING ACTIONS ═══ -->
+<div class="floating-actions-container">
+    <div class="fab-group" id="socialGroup">
+        <div class="fab-menu">
+            <a href="https://facebook.com/share/1GLd3Qt2Tj" target="_blank" rel="noopener" class="fab-item" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/primavera.events.group?igsh=Y2g4d3hvZW95dDc5" target="_blank" rel="noopener" class="fab-item" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@primavera_events_group?_r=1&_t=ZS-94uQ5m4lTyG" target="_blank" rel="noopener" class="fab-item" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com/in/richard-hernandez-3844ba3b9" target="_blank" rel="noopener" class="fab-item" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@PrimaveraEventsGroup" target="_blank" rel="noopener" class="fab-item" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <button class="fab-main fab-social" id="btnSocial" aria-label="Redes sociales">
+            <span class="fab-label">Nuestras redes</span><i class="fas fa-share-alt"></i>
+        </button>
+    </div>
+    <button class="fab-main fab-share" id="btnShare" title="Compartir" aria-label="Compartir">
+        <span class="fab-label">Compartir</span><i class="fas fa-paper-plane"></i>
+    </button>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <img src="primavera-events-group-logo.png" alt="Primavera Events Group" class="footer-logo">
+        <p style="font-family:var(--font-serif); font-size:1.1rem;">Primavera Events Group<sup style="font-size:.6rem">®</sup></p>
+        <p style="font-size:.8rem; color:var(--gray-text);">El placer de servir</p>
+        <a href="https://primaveraeventsgroup.com/" target="_blank" rel="noopener">primaveraeventsgroup.com</a>
+        <p style="font-size:.8rem; color:var(--gray-text); max-width:620px;">Organización de bodas, XV años, graduaciones y eventos corporativos en Cuernavaca, Temixco, Xochitepec y todo el estado de Morelos.</p>
+        <div class="footer-bottom">
+            © 2026 Primavera Events Group®. Todos los derechos reservados.<br>
+            Primavera Venue Partners™, Primavera Venue Network™ y Primavera Venue Residency™ son programas de Primavera Events Group, sujetos a evaluación, disponibilidad de zona y firma de convenio.
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    // Preloader
+    var pre = document.getElementById('preloader'),
+        btn = document.getElementById('btnEnter'),
+        audio = document.getElementById('bgAudio'),
+        toggle = document.getElementById('audioToggle');
+
+    btn.addEventListener('click', function () {
+        pre.classList.add('fade-out');
+        setTimeout(function () { pre.style.display = 'none'; }, 800);
+        audio.volume = 0.25;
+        audio.play().then(function () {
+            toggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }).catch(function () { /* el navegador bloqueó el autoplay: se queda en mute */ });
+    });
+
+    toggle.addEventListener('click', function () {
+        if (audio.paused) {
+            audio.play();
+            toggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+        } else {
+            audio.pause();
+            toggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
+    });
+
+    // Botones flotantes
+    var group = document.getElementById('socialGroup');
+    document.getElementById('btnSocial').addEventListener('click', function (e) {
+        e.stopPropagation();
+        group.classList.toggle('active');
+    });
+    document.addEventListener('click', function () { group.classList.remove('active'); });
+
+    document.getElementById('btnShare').addEventListener('click', function () {
+        var data = {
+            title: 'Primavera Venue Partners',
+            text: 'Alianza estratégica de crecimiento y comercialización para venues en Morelos.',
+            url: window.location.href
+        };
+        if (navigator.share) {
+            navigator.share(data).catch(function () {});
+        } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(window.location.href).then(function () {
+                alert('Enlace copiado al portapapeles.');
+            });
+        }
+    });
+})();
+</script>
+</body>
+</html>

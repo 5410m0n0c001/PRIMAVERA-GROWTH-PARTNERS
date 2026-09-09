@@ -165,6 +165,9 @@
         .btn-expo:hover { background:var(--primary-pink); color:white; transform:scale(1.05); }
         .expo-img-box { flex:1; min-width:220px; overflow:hidden; }
         .expo-img-box img { width:100%; height:100%; object-fit:cover; min-height:210px; }
+        .rostros-cover img { width:100%; height:auto; display:block; border-radius:20px; border:1px solid var(--beige); box-shadow:0 14px 32px rgba(31,31,31,.10); margin-bottom:24px; }
+        .expo-img-box.retrato { background:var(--background-light); display:flex; align-items:center; justify-content:center; padding:14px; min-height:420px; }
+        .expo-img-box.retrato img { object-fit:contain; height:auto; max-height:560px; min-height:0; }
 
         /* PUBLICIDAD (#10 obligatoria) */
         .publicidad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px; }
@@ -237,6 +240,64 @@
             .pricing-section h3, .residency-title { color:var(--primary-pink) !important; }
             .residency-roles p, .pricing-section > p { color:#333 !important; }
             @page { margin:1.5cm 1.2cm; }
+        }
+
+        /* ══ Render 3D y fichas tecnicas (portado de la cotizacion Tsu Nuum) ══ */
+        .video-section { margin-top:50px; }
+        .video-frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--beige);
+            background:var(--primary-dark); box-shadow:0 18px 40px rgba(31,31,31,.14); }
+        .video-frame video { width:100%; height:auto; display:block; max-height:78vh; background:var(--primary-dark); }
+        .video-full { position:absolute; right:14px; bottom:60px; z-index:4; display:inline-flex; align-items:center; gap:7px;
+            background:rgba(31,31,31,.82); color:var(--white); border:1px solid var(--gold-accent); border-radius:30px;
+            padding:8px 16px; font-size:.78rem; font-weight:600; cursor:pointer; font-family:var(--font-sans); }
+        .video-full:hover { background:var(--primary-pink); }
+        .media-hint { color:var(--gray-text); font-size:.92rem; margin-bottom:18px; max-width:70ch; }
+
+        .slides-section { margin-top:50px; }
+        .slides-wrap { position:relative; }
+        .slides-track { display:flex; gap:16px; overflow-x:auto; touch-action:pan-x; scroll-snap-type:x mandatory; scroll-behavior:smooth;
+            padding:4px 2px 14px; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+        .slides-track::-webkit-scrollbar { height:6px; }
+        .slides-track::-webkit-scrollbar-thumb { background:var(--beige); border-radius:10px; }
+        .slide { flex:0 0 auto; width:min(460px, 82vw); scroll-snap-align:center; border-radius:16px; overflow:hidden;
+            border:1px solid var(--beige); background:var(--white); box-shadow:0 10px 26px rgba(31,31,31,.07);
+            transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; cursor:zoom-in; position:relative; }
+        .slide:hover { transform:translateY(-4px); box-shadow:0 14px 32px rgba(31,31,31,.12); }
+        .slide img { width:100%; height:auto; display:block; }
+        .slide::after { content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute;
+            right:10px; bottom:10px; background:rgba(31,31,31,.72); color:#fff; width:32px; height:32px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-size:.85rem; opacity:0; transition:opacity .3s; }
+        .slide:hover::after { opacity:1; }
+        .slide-nav { position:absolute; top:45%; transform:translateY(-50%); z-index:5; width:42px; height:42px; border-radius:50%;
+            border:1px solid var(--beige); background:var(--white); color:var(--primary-pink); cursor:pointer; font-size:1rem;
+            box-shadow:0 6px 18px rgba(31,31,31,.14); display:flex; align-items:center; justify-content:center; }
+        .slide-nav:hover { background:var(--primary-pink); color:var(--white); }
+        .slide-nav.prev { left:-6px; } .slide-nav.next { right:-6px; }
+        .slides-dots { display:flex; justify-content:center; gap:7px; margin-top:10px; }
+        .slides-dots span { width:7px; height:7px; border-radius:50%; background:var(--beige); transition:all .3s; }
+        .slides-dots span.on { background:var(--primary-pink); width:20px; border-radius:10px; }
+        .slides-fotos .slide { width:min(340px, 78vw); }
+        .slides-fotos .slide img { aspect-ratio:4/3; height:auto; object-fit:cover; object-position:center; }
+        .carrusel-titulo { font-family:var(--font-serif); font-size:1.06rem; font-weight:600; margin:34px 0 4px; display:flex; align-items:center; gap:9px; }
+        .carrusel-titulo i { color:var(--primary-pink); font-size:.92rem; }
+        .carrusel-sub { color:var(--gray-text); font-size:.86rem; margin-bottom:12px; }
+
+        .visor { position:fixed; inset:0; z-index:10000; background:rgba(20,14,17,.94); display:none;
+            align-items:center; justify-content:center; padding:20px; }
+        .visor.abierto { display:flex; }
+        .visor img { max-width:96vw; max-height:92vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+        .visor-cerrar { position:absolute; top:16px; right:20px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+        .visor-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+            color:#fff; width:46px; height:46px; border-radius:50%; cursor:pointer; font-size:1.1rem; }
+        .visor-nav:hover { background:var(--primary-pink); }
+        .visor-nav.izq { left:16px; } .visor-nav.der { right:16px; }
+        .visor-contador { position:absolute; bottom:18px; left:0; right:0; text-align:center; color:rgba(255,255,255,.75); font-size:.82rem; letter-spacing:1px; }
+
+        @media (max-width:768px){
+            .slide-nav { width:36px; height:36px; font-size:.85rem;
+                background:rgba(255,255,255,.92); box-shadow:0 4px 14px rgba(31,31,31,.28); }
+            .slide-nav.prev { left:4px; } .slide-nav.next { right:4px; }
+            .slides-track { scroll-snap-type:x proximity; overscroll-behavior-x:contain; }
         }
     </style>
 </head>
@@ -486,10 +547,141 @@
 
     </div>
 
+    <!-- ═══ LA OPERACIÓN EN FOTOS REALES ═══ -->
+    <h3 class="section-title"><i class="fas fa-camera"></i> La operación, en fotos reales</h3>
+    <p class="section-intro">Nada de banco de imágenes: todo lo que sigue salió de eventos producidos por Primavera Events Group. Esto es lo que se monta y se sirve en el espacio de un aliado.</p>
+
+    <h4 class="carrusel-titulo"><i class="fas fa-place-of-worship"></i> Ceremonia en sede</h4>
+    <p class="carrusel-sub">Kit religioso completo: atril, cruz, reclinatorio, entelado, sonorización con micrófono inalámbrico y sillería Tiffany. Se monta en el jardín del propio venue.</p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                    <div class="slide"><img src="op-tsunuum_area_ceremonia.webp" alt="Área de ceremonia montada en jardín" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_oficiante.jpg" alt="Oficiante durante la ceremonia religiosa" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_atril_general.jpg" alt="Atril y montaje general de la ceremonia" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_kit_religioso.jpg" alt="Reclinatorio y altar del kit religioso" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_sonorizacion.jpg" alt="Sonorización con micrófono inalámbrico" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_sillas.jpg" alt="Sillas Tiffany blancas de la ceremonia" loading="lazy"></div>
+                    <div class="slide"><img src="op-ceremonia_cruz_detalle.jpg" alt="Detalle de la cruz y el altar" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <h4 class="carrusel-titulo"><i class="fas fa-martini-glass-citrus"></i> Cóctel de bienvenida</h4>
+    <p class="carrusel-sub">Barra de bienvenida sin alcohol preparada al momento: margaritas de sabores, piñada, mojito y aguas frescas naturales, con crudités y barra mix de toppings.</p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                    <div class="slide"><img src="op-margaritas.webp" alt="Margaritas de sabores sin alcohol" loading="lazy"></div>
+                    <div class="slide"><img src="op-pinas_coladas.webp" alt="Piñadas sin alcohol" loading="lazy"></div>
+                    <div class="slide"><img src="op-mojitos.webp" alt="Mojitos sin alcohol" loading="lazy"></div>
+                    <div class="slide"><img src="op-aguas_frescas.webp" alt="Aguas frescas naturales" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <h4 class="carrusel-titulo"><i class="fas fa-leaf"></i> Banquete · entradas</h4>
+    <p class="carrusel-sub">Primer tiempo: ensaladas frescas y cremas de autor del Menú Gourmet Primavera, emplatadas por el equipo de cocina del grupo.</p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                    <div class="slide"><img src="op-entrada_1.jpg" alt="Entrada emplatada, opción 1" loading="lazy"></div>
+                    <div class="slide"><img src="op-entrada_2.jpg" alt="Entrada emplatada, opción 2" loading="lazy"></div>
+                    <div class="slide"><img src="op-entrada_3.jpg" alt="Entrada emplatada, opción 3" loading="lazy"></div>
+                    <div class="slide"><img src="op-entrada_4.jpg" alt="Entrada emplatada, opción 4" loading="lazy"></div>
+                    <div class="slide"><img src="op-entrada_5.jpg" alt="Entrada emplatada, opción 5" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <h4 class="carrusel-titulo"><i class="fas fa-drumstick-bite"></i> Banquete · platos fuertes</h4>
+    <p class="carrusel-sub">Segundo tiempo: res, cerdo, pollo o salmón en sus distintas salsas, con dos guarniciones a elegir, pan y chiles.</p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                    <div class="slide"><img src="op-plato_fuerte_1.jpg" alt="Plato fuerte, opción 1" loading="lazy"></div>
+                    <div class="slide"><img src="op-plato_fuerte_2.jpg" alt="Plato fuerte, opción 2" loading="lazy"></div>
+                    <div class="slide"><img src="op-plato_fuerte_3.jpg" alt="Plato fuerte, opción 3" loading="lazy"></div>
+                    <div class="slide"><img src="op-plato_fuerte_4.jpg" alt="Plato fuerte, opción 4" loading="lazy"></div>
+                    <div class="slide"><img src="op-plato_fuerte_5.jpg" alt="Plato fuerte, opción 5" loading="lazy"></div>
+                    <div class="slide"><img src="op-plato_fuerte_6.jpg" alt="Plato fuerte, opción 6" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <h4 class="carrusel-titulo"><i class="fas fa-ice-cream"></i> Banquete · postres y repostería fina</h4>
+    <p class="carrusel-sub">Tercer tiempo: repostería de autor. Se complementa con mesa de postres personalizada y el pastel del evento.</p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                    <div class="slide"><img src="op-postre_1.jpg" alt="Postre de autor, opción 1" loading="lazy"></div>
+                    <div class="slide"><img src="op-postre_2.jpg" alt="Postre de autor, opción 2" loading="lazy"></div>
+                    <div class="slide"><img src="op-postre_3.jpg" alt="Postre de autor, opción 3" loading="lazy"></div>
+                    <div class="slide"><img src="op-postre_4.jpg" alt="Postre de autor, opción 4" loading="lazy"></div>
+                    <div class="slide"><img src="op-postre_5.jpg" alt="Postre de autor, opción 5" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <!-- ═══ RENDER 3D DEL ESPACIO ═══ -->
+    <div class="video-section">
+        <h3 class="section-title"><i class="fas fa-cube"></i> Render 3D y croquis interactivo de tu espacio</h3>
+        <p class="media-hint">Levantamos tu venue en 3D y entregamos el croquis de distribución en 2D y 3D: mesas, pista, templete, barra y accesos, ajustados a la paleta de color de cada evento. El cliente ve su celebración montada antes de firmar — y tú tienes una herramienta de venta que casi ningún espacio en Morelos puede mostrar.</p>
+        <div class="video-frame">
+            <video id="videoRender" controls autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="render-3d-poster.webp">
+                <source src="render-3d-croquis.mp4" type="video/mp4">
+            </video>
+            <button class="video-full" id="btnFullRender" title="Ver en pantalla completa"><i class="fas fa-expand"></i> Pantalla completa</button>
+        </div>
+        <p class="table-note">Ejemplo real: croquis interactivo producido para una boda en Jardín Tsu Nuum.</p>
+    </div>
+
+    <!-- ═══ FICHA TÉCNICA DEL EVENTO ═══ -->
+    <div class="slides-section">
+        <h3 class="section-title"><i class="fas fa-file-lines"></i> Ficha técnica del evento</h3>
+        <p class="media-hint">Cada evento se documenta hoja por hoja: áreas, montaje, banquete, tiempos de servicio, staff asignado, audio, efectos y responsables. Es el documento que ordena la operación del día y el que le da al cliente —y a tu equipo— la certeza de que nada se está improvisando. Desliza o toca una hoja para verla completa.</p>
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                <div class="slide"><img src="ficha-tecnica-01.png" alt="Ficha técnica del evento, hoja 1" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-02.png" alt="Ficha técnica del evento, hoja 2" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-04.png" alt="Ficha técnica del evento, hoja 3" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-05.webp" alt="Ficha técnica del evento, hoja 4" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-06.png" alt="Ficha técnica del evento, hoja 5" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-07.webp" alt="Ficha técnica del evento, hoja 6" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-08.png" alt="Ficha técnica del evento, hoja 7" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-09.png" alt="Ficha técnica del evento, hoja 8" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-10.png" alt="Ficha técnica del evento, hoja 9" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-11.webp" alt="Ficha técnica del evento, hoja 10" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-12.png" alt="Ficha técnica del evento, hoja 11" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-13.png" alt="Ficha técnica del evento, hoja 12" loading="lazy"></div>
+                <div class="slide"><img src="ficha-tecnica-14.png" alt="Ficha técnica del evento, hoja 13" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
     <!-- ═══ LOS ROSTROS ═══ -->
     <div class="expo-section">
         <h3 class="section-title"><i class="fas fa-user-tie"></i> Los rostros de la firma</h3>
         <p class="section-intro">Un venue no se asocia con un logotipo. Se asocia con quien va a estar ahí el día del evento.</p>
+        <div class="rostros-cover"><img src="planners-portada.png" alt="Planners Jessy y Richard — Primavera Events Group"></div>
         <div class="expo-card">
             <div class="expo-content">
                 <span class="expo-badge">Dirección General</span>
@@ -510,7 +702,7 @@
                 <a href="https://primaveraeventsgroup.com/richard-hernandez/" class="btn-expo" target="_blank" rel="noopener"><i class="fas fa-arrow-right"></i> Richard Hernández</a>
                 <a href="https://primaveraeventsgroup.com/jessy/" class="btn-expo" target="_blank" rel="noopener"><i class="fas fa-arrow-right"></i> Jessy Sandoval</a>
             </div>
-            <div class="expo-img-box"><img src="pub-planning.jpg" alt="Jessy y Richard, dirección general de Primavera Events Group"></div>
+            <div class="expo-img-box retrato"><img src="planners-jessy-richard.png" alt="Jessy Sandoval y Richard Hernández, planners y dirección general de Primavera Events Group"></div>
         </div>
     </div>
 
@@ -939,6 +1131,86 @@
                 alert('Enlace copiado al portapapeles.');
             });
         }
+    });
+})();
+</script>
+<div class="visor" id="visor">
+    <button class="visor-cerrar" id="visorCerrar" aria-label="Cerrar">&times;</button>
+    <button class="visor-nav izq" id="visorPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+    <img id="visorImg" alt="Hoja de la ficha técnica en tamaño completo">
+    <button class="visor-nav der" id="visorNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    <div class="visor-contador" id="visorContador"></div>
+</div>
+
+<script>
+(function () {
+    // ── Pantalla completa del render 3D ──
+    var vid = document.getElementById('videoRender'),
+        btnFull = document.getElementById('btnFullRender');
+    if (btnFull && vid) {
+        btnFull.addEventListener('click', function () {
+            if (vid.requestFullscreen) vid.requestFullscreen();
+            else if (vid.webkitEnterFullscreen) vid.webkitEnterFullscreen();
+            else if (vid.webkitRequestFullscreen) vid.webkitRequestFullscreen();
+        });
+    }
+
+    // ── Carruseles (fichas técnicas y fotos de operación) ──
+    var visor = document.getElementById('visor'),
+        visorImg = document.getElementById('visorImg'),
+        contador = document.getElementById('visorContador'),
+        galeria = [], actual = 0;
+
+    function pinta() {
+        visorImg.src = galeria[actual];
+        contador.textContent = (actual + 1) + ' / ' + galeria.length;
+    }
+    function abre(fuentes, i) {
+        galeria = fuentes; actual = i; pinta();
+        visor.classList.add('abierto'); document.body.style.overflow = 'hidden';
+    }
+    function cierra() { visor.classList.remove('abierto'); document.body.style.overflow = ''; }
+    function mueve(d) { if (!galeria.length) return; actual = (actual + d + galeria.length) % galeria.length; pinta(); }
+
+    Array.prototype.forEach.call(document.querySelectorAll('.slides-section'), function (sec) {
+        var track = sec.querySelector('.slides-track');
+        if (!track) return;
+        var slides = track.querySelectorAll('.slide'),
+            dots = sec.querySelector('.slides-dots'),
+            prev = sec.querySelector('.slide-nav.prev'),
+            next = sec.querySelector('.slide-nav.next'),
+            fuentes = Array.prototype.map.call(slides, function (sl) { return sl.querySelector('img').getAttribute('src'); });
+
+        for (var i = 0; i < slides.length; i++) dots.appendChild(document.createElement('span'));
+        var puntos = dots.querySelectorAll('span');
+
+        function paso() { return slides[0].getBoundingClientRect().width + 16; }
+        function marca() {
+            var a = Math.round(track.scrollLeft / paso());
+            for (var i = 0; i < puntos.length; i++) puntos[i].className = (i === a ? 'on' : '');
+        }
+        prev.addEventListener('click', function () { track.scrollBy({ left: -paso(), behavior: 'smooth' }); });
+        next.addEventListener('click', function () { track.scrollBy({ left: paso(), behavior: 'smooth' }); });
+        track.addEventListener('scroll', marca, { passive: true });
+        Array.prototype.forEach.call(puntos, function (p, k) {
+            p.style.cursor = 'pointer';
+            p.addEventListener('click', function () { track.scrollTo({ left: k * paso(), behavior: 'smooth' }); });
+        });
+        Array.prototype.forEach.call(slides, function (sl, k) {
+            sl.addEventListener('click', function () { abre(fuentes, k); });
+        });
+        marca();
+    });
+
+    document.getElementById('visorCerrar').addEventListener('click', cierra);
+    document.getElementById('visorPrev').addEventListener('click', function (e) { e.stopPropagation(); mueve(-1); });
+    document.getElementById('visorNext').addEventListener('click', function (e) { e.stopPropagation(); mueve(1); });
+    visor.addEventListener('click', function (e) { if (e.target === visor || e.target === visorImg) cierra(); });
+    document.addEventListener('keydown', function (e) {
+        if (!visor.classList.contains('abierto')) return;
+        if (e.key === 'Escape') cierra();
+        if (e.key === 'ArrowLeft') mueve(-1);
+        if (e.key === 'ArrowRight') mueve(1);
     });
 })();
 </script>

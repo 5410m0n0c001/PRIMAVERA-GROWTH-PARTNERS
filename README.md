@@ -85,6 +85,34 @@ Las fotos de evento provienen de `2026-09-05_XV-Elisa_CC-Presidente/Fotos_correg
 
 ---
 
+## Actualización 2026-09-09 — reestructura a ecosistema
+
+La página dejó de venderse como agencia de marketing. Orden actual de secciones:
+
+1. **Arquitectura del grupo** — PEG holding · Banquetes Primavera · Wedding & Event Planning ·
+   unidad audiovisual · administración y contratos · padrón de proveedores.
+2. **Todo lo que dejas de resolver** — 7 áreas operativas que el venue delega.
+3. **La operación, en fotos reales** — 5 carruseles portados de la cotización de Tsu Nuum
+   (ceremonia, cóctel, entradas, platos fuertes, postres). Assets con prefijo `op-`.
+4. **Render 3D y croquis interactivo** — `render-3d-croquis.mp4` + `render-3d-poster.webp`.
+   Solo se trajo el MP4; el WebM original pesa 26 MB y se omitió a propósito.
+5. **Ficha técnica del evento** — carrusel de 13 hojas, assets `ficha-tecnica-*`.
+   **Ojo:** son hojas de un evento real (Jardín Manzanares). Si se va a publicar abierto,
+   conviene una versión anonimizada.
+6. **Los rostros** — `planners-portada.png` (banner) y `planners-jessy-richard.png` (retrato).
+7. Los **5 pilares comerciales** ahora se presentan como la capa de comercialización, no como
+   la oferta completa.
+
+El carrusel y el visor a pantalla completa son genéricos: cualquier bloque
+`.slides-section` con `.slides-track`, `.slide-nav` y `.slides-dots` se inicializa solo,
+sin ids. Para agregar un carrusel nuevo basta copiar el bloque HTML.
+
+Departamentos **contable** y **jurídico** dados de alta en `conocimiento_rag_chunks`
+(categoría `colaborador`) el 2026-09-09, declarados por dirección. Falta asignarles
+responsable y generarles embedding para que el RAG los recupere por búsqueda vectorial.
+
+---
+
 ## Repositorio y publicación
 
 Este proyecto se desarrolla **de forma independiente** en:

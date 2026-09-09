@@ -179,6 +179,17 @@
         .planner-info h4 { font-size:1.15rem; color:var(--primary-dark); margin-bottom:4px; }
         .planner-info p { font-size:.82rem; color:var(--gray-text); margin:0; }
         .planner-info .planner-rol { color:var(--primary-pink); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.6px; margin-bottom:3px; }
+        .balance-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:22px; margin-top:22px; }
+        .balance-card { background:var(--white); border:1px solid var(--beige); border-radius:20px; padding:26px 24px; box-shadow:0 10px 26px rgba(31,31,31,.05); }
+        .balance-card h5 { font-family:var(--font-serif); font-size:1.16rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+        .balance-card.gana h5 { color:var(--primary-pink); }
+        .balance-card.evita h5 { color:var(--gray-text); }
+        .balance-card ul { list-style:none; }
+        .balance-card li { position:relative; padding-left:22px; margin-bottom:11px; font-size:.9rem; color:var(--gray-text); line-height:1.55; }
+        .balance-card li b { color:var(--primary-dark); font-weight:600; }
+        .balance-card.gana li::before { content:'\f058'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; left:0; top:1px; color:var(--primary-pink); font-size:.82rem; }
+        .balance-card.evita li::before { content:'\f057'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; left:0; top:1px; color:var(--beige); font-size:.82rem; }
+        .balance-card.evita { background:var(--background-light); }
         .rostros-cover img { width:100%; height:auto; display:block; border-radius:20px; border:1px solid var(--beige); box-shadow:0 14px 32px rgba(31,31,31,.10); margin-bottom:24px; }
         .expo-img-box.retrato { background:var(--background-light); display:flex; align-items:center; justify-content:center; padding:14px; min-height:420px; }
         .expo-img-box.retrato img { object-fit:contain; height:auto; max-height:560px; min-height:0; }
@@ -335,8 +346,8 @@
 <!-- ═══ 2. HERO ═══ -->
 <header class="hero">
     <div class="hero-content">
-        <p class="hero-eyebrow">Vertical Venue Partners · Morelos</p>
-        <p class="hero-declare">No somos una agencia. Somos tu partner de crecimiento.</p>
+        <p class="hero-eyebrow">Programa de aliados · Salones y jardines de Morelos</p>
+        <p class="hero-declare">Un sábado vacío cuesta lo mismo que uno lleno.</p>
         <h1>Primavera Growth Partners<sup>™</sup></h1>
         <p class="hero-sub">Strategic Growth &amp; Marketing Alliance</p>
     </div>
@@ -356,8 +367,8 @@
     <!-- ═══ 3. HEADER INFO ═══ -->
     <div class="header-info">
         <div class="header-main">
-            <h2>Tú operas el venue.<br>Nosotros ponemos todo lo demás.</h2>
-            <p>Primavera Events Group no es una agencia de marketing: es un grupo de eventos completo. Planeación, banquete, mobiliario, staffing, marketing digital con audiovisual propio, respaldo contable y jurídico, y comercialización operando sobre un mismo espacio — el tuyo. Y si tu venue ya tiene equipo, no lo sustituimos: lo integramos al ecosistema para multiplicar su capacidad.</p>
+            <h2>Llena tu calendario.<br>Sin contratar a nadie más.</h2>
+            <p>Tú pones el espacio. Primavera Events Group pone la demanda y la operación completa: planners, banquete, mobiliario, personal de servicio, contenido y campañas. Tu salón empieza a venderse todos los días y a entregar eventos de primer nivel <strong>sin una sola contratación nueva, sin comprar inventario y sin dejar de ser tuyo</strong>. Y si ya tienes equipo, no lo sustituimos: lo integramos para multiplicar lo que hoy puede hacer.</p>
             <div class="badge-event"><i class="fas fa-handshake"></i> Programa de Aliados Estratégicos</div>
         </div>
         <div class="summary-boxes">
@@ -369,16 +380,48 @@
     </div>
 
     <!-- ═══ PLANTEAMIENTO ═══ -->
-    <h3 class="section-title"><i class="fas fa-lightbulb"></i> El planteamiento</h3>
-    <p class="lead-text">La mayoría de los espacios en Morelos no tiene un problema de calidad. Tiene un problema de comercialización.</p>
-    <p class="body-text">Se invierte en jardín, cocina, iluminación y estacionamiento — y luego se espera a que alguien pase, pregunte y decida. Las fotos viven en un celular, el precio en un WhatsApp y la disponibilidad en la cabeza del dueño. El producto es bueno; lo que falta es una estructura que lo venda todos los días.</p>
-    <p class="body-text"><strong>Primavera Growth Partners no es un servicio de redes sociales, y tampoco es una agencia.</strong> Detrás de esta alianza hay un grupo de eventos que opera todos los días: una firma de wedding &amp; event planning, una casa de banquetes, un inventario propio de mobiliario, una plantilla de servicio certificada, un equipo de marketing digital con unidad audiovisual propia, una unidad contable, una unidad jurídica y un padrón de proveedores verificados.</p>
-    <p class="body-text">Por eso el dueño de un salón no recibe publicaciones: recibe <strong>capacidad operativa completa</strong>. La comercialización —los cinco pilares que verás más abajo— es la capa que conecta esa capacidad con la demanda. Es la parte más visible del programa, pero es la última, no la única.</p>
-    <p class="body-text"><strong>Cómo está organizado.</strong> <em>Primavera Growth Partners™</em> es el programa de alianzas comerciales de Primavera Events Group. Esta página presenta su vertical de espacios, <em>Venue Partners</em>, dedicada a salones y jardines de Morelos. El programa está construido para incorporar después otras verticales —proveedores, producción audiovisual, hospedaje— bajo la misma estructura de niveles y los mismos cinco pilares.</p>
+    <h3 class="section-title"><i class="fas fa-calendar-xmark"></i> Las dos fechas que ya perdiste este año</h3>
+    <p class="lead-text">Tu espacio no tiene un problema de calidad. Tiene un problema de agenda.</p>
+    <p class="body-text">El pasto se corta igual, el predial se paga igual, el mantenimiento y la vigilancia corren igual. Un sábado sin evento cuesta prácticamente lo mismo que uno lleno — solo que no entra nada. La diferencia entre los dos no está en el jardín: está en <strong>quién estuvo vendiendo tu espacio esa semana</strong>. Y si la respuesta es "el que pase y pregunte", la agenda la decide la suerte.</p>
+    <p class="body-text">Hay una segunda fuga, más silenciosa. Es la familia que sí llegó. Le gustó el lugar, preguntó el precio… y luego preguntó por el banquete. Por el mobiliario. Por quién coordina el día. Por el DJ, la ceremonia, el personal. Si la respuesta fue <em>"eso usted lo ve por su cuenta"</em>, esa boda se fue con el salón que sí lo resolvía todo. <strong>No la perdiste por precio. La perdiste por no tener con qué responder.</strong></p>
+    <p class="body-text"><strong>Primavera Growth Partners es el programa con el que tu espacio deja de rentarse de vez en cuando y empieza a venderse todos los días.</strong> Te conecta con la demanda que Primavera Events Group ya está generando en Morelos, y pone detrás de ti la estructura que ejecuta el evento completo: planners, banquete, mobiliario, personal, contenido, campañas y respaldo contable y jurídico. Tú sigues siendo el dueño y sigues operando tu espacio. Nosotros ponemos todo aquello que hoy te obliga a decir que no.</p>
+
+    <!-- ═══ GANAS / DEJAS DE CARGAR ═══ -->
+    <h3 class="section-title"><i class="fas fa-scale-balanced"></i> Lo que ganas y lo que dejas de cargar</h3>
+    <p class="section-intro">Antes de hablar de niveles, pilares y estructura, esto es lo que cambia en tu operación y en tu cuenta.</p>
+    <div class="balance-grid">
+        <div class="balance-card gana">
+            <h5><i class="fas fa-arrow-trend-up"></i> Lo que ganas</h5>
+            <ul>
+                <li><b>Fechas ocupadas con demanda que ya existe</b>, no con la que pase por la puerta.</li>
+                <li><b>Un "sí" para cada pregunta del cliente:</b> banquete, montaje, planner, personal, entretenimiento y ceremonia.</li>
+                <li><b>Un ticket más alto por evento.</b> Un evento llave en mano se cotiza completo, no como renta de espacio.</li>
+                <li><b>Tu espacio con página propia</b>, fotos profesionales y contenido nuevo después de cada evento.</li>
+                <li><b>Prestigio por asociación:</b> tu nombre junto al de los venues que hoy más se venden en Morelos.</li>
+                <li><b>Anticipos, contratos y facturación</b> con respaldo formal detrás.</li>
+                <li><b>Tu tiempo de regreso.</b> Dejas de ser vendedor, coordinador y community manager de tu propio salón.</li>
+            </ul>
+        </div>
+        <div class="balance-card evita">
+            <h5><i class="fas fa-circle-minus"></i> Lo que dejas de cargar</h5>
+            <ul>
+                <li>Contratar y sostener planners, capitanes, meseros y coordinación.</li>
+                <li>Comprar mobiliario, mantelería, loza y cristalería que se usa doce veces al año.</li>
+                <li>Perseguir proveedores — y dar la cara por los que fallan.</li>
+                <li>Pagar una agencia que publica bonito y no te llena una sola fecha.</li>
+                <li>Explicar precios por WhatsApp a las once de la noche.</li>
+                <li>Cerrar eventos de palabra, cobrar de memoria y quedarte sin contrato cuando algo se cae.</li>
+                <li>Ver pasar la temporada alta sin una sola campaña activa.</li>
+            </ul>
+        </div>
+    </div>
+    <p class="quote-phrase">Tú no necesitas un proveedor más. Necesitas dejar de ser el único que resuelve.</p>
+
+    <p class="body-text" style="margin-top:26px"><strong>Cómo está organizado.</strong> <em>Primavera Growth Partners™</em> es el programa de alianzas comerciales de Primavera Events Group. Esta página presenta su vertical de espacios, <em>Venue Partners</em>, dedicada a salones y jardines de Morelos.</p>
 
     <!-- ═══ ARQUITECTURA DEL GRUPO ═══ -->
-    <h3 class="section-title"><i class="fas fa-sitemap"></i> Quién está detrás de la alianza</h3>
-    <p class="section-intro">Primavera Events Group es la firma organizadora y el holding. Debajo operan las unidades que ejecutan el evento completo. Un venue aliado no contrata a un proveedor: entra a la estructura entera.</p>
+    <h3 class="section-title"><i class="fas fa-sitemap"></i> Quién responde cuando dices que sí</h3>
+    <p class="section-intro">Cuando aceptas una boda, detrás de tu "sí" se activan estas unidades. No contratas a un proveedor que a su vez subcontrata: entras a una estructura que ya opera todos los fines de semana.</p>
     <div class="venue-info-grid">
         <div class="venue-info-card"><i class="fas fa-crown"></i><h5>Primavera Events Group</h5><p>La marca madre y firma organizadora. Dirección general, planificación ejecutiva, administración y dirección creativa in-house. Es quien firma el contrato y responde por el evento completo.</p></div>
         <div class="venue-info-card"><i class="fas fa-utensils"></i><h5>Banquetes Primavera</h5><p>La casa de banquetes del grupo: catering de alta cocina, mixología fina, mesa de postres de autor, mantelería, loza y mobiliario de gala. Es la unidad que cocina, sirve y monta.</p></div>
@@ -390,7 +433,7 @@
     </div>
 
     <!-- ═══ ECOSISTEMA ═══ -->
-    <h3 class="section-title"><i class="fas fa-project-diagram"></i> ¿Qué pasa cuando un venue se une?</h3>
+    <h3 class="section-title"><i class="fas fa-project-diagram"></i> Qué cambia desde el primer evento</h3>
     <div class="eco-wrap">
         <svg class="eco-svg" viewBox="0 0 640 640" role="img" aria-label="Ecosistema Primavera: al centro Primavera Events Group, conectada con venue, marketing, contenido, tecnología, eventos, proveedores y demanda.">
             <g class="spoke">
@@ -426,13 +469,13 @@
             <p class="lead-text">No buscamos tener todos los venues de Morelos. Buscamos tener los venues correctos.</p>
             <p class="body-text">Cada evento producido en tu espacio genera contenido. Ese contenido alimenta campañas. Las campañas generan prospectos. Los prospectos se atienden con cotizador, seguimiento y CRM. Y quienes cierran vuelven a producir contenido — <strong>en tu venue</strong>.</p>
             <p class="body-text">Al mismo tiempo entras a una red de proveedores verificados, activaciones de marca y colaboraciones cruzadas con otros venues. Un aliado no compite con otro: se complementan por zona y por perfil.</p>
-            <p class="body-text">Eso es lo que una agencia digital no puede ofrecerte: <strong>no tiene eventos propios, ni red de proveedores, ni demanda que ya está fluyendo.</strong></p>
+            <p class="body-text">Por eso el primer evento ya está trabajando para el segundo: <strong>cada celebración en tu jardín deja fotos, video, reseñas y campañas que salen a buscar la siguiente.</strong> Tu espacio deja de empezar de cero cada temporada.</p>
         </div>
     </div>
 
     <!-- ═══ LO QUE SE DELEGA ═══ -->
     <h3 class="section-title"><i class="fas fa-hand-holding-heart"></i> Todo lo que dejas de resolver</h3>
-    <p class="section-intro">Esto es lo que hoy resuelve un dueño de salón a punta de llamadas, favores y proveedores sueltos. Con Primavera se delega completo, en una sola estructura y una sola propuesta al cliente.</p>
+    <p class="section-intro">Cada punto de esta lista es hoy una llamada, un favor o un proveedor que tú tienes que conseguir, supervisar y cobrar. A partir de la alianza, las siete áreas llegan resueltas — y el cliente recibe una sola propuesta, no siete cotizaciones.</p>
     <div class="includes-grid">
 
         <div class="include-item">
@@ -560,8 +603,8 @@
     </div>
 
     <!-- ═══ LA OPERACIÓN EN FOTOS REALES ═══ -->
-    <h3 class="section-title"><i class="fas fa-camera"></i> La operación, en fotos reales</h3>
-    <p class="section-intro">Nada de banco de imágenes: todo lo que sigue salió de eventos producidos por Primavera Events Group. Esto es lo que se monta y se sirve en el espacio de un aliado.</p>
+    <h3 class="section-title"><i class="fas fa-camera"></i> Así se vería un evento en tu espacio</h3>
+    <p class="section-intro">Ninguna de estas fotos es de banco: todas salieron de eventos reales producidos por Primavera Events Group. Esto es lo que llegaría a montarse y a servirse en tu jardín, sin que tú compres una silla.</p>
 
     <h4 class="carrusel-titulo"><i class="fas fa-place-of-worship"></i> Ceremonia en sede</h4>
     <p class="carrusel-sub">Kit religioso completo: atril, cruz, reclinatorio, entelado, sonorización con micrófono inalámbrico y sillería Tiffany. Se monta en el jardín del propio venue.</p>
@@ -665,7 +708,7 @@
 
     <!-- ═══ FICHA TÉCNICA DEL EVENTO ═══ -->
     <div class="slides-section">
-        <h3 class="section-title"><i class="fas fa-file-lines"></i> Ficha técnica del evento</h3>
+        <h3 class="section-title"><i class="fas fa-file-lines"></i> El documento que evita que algo se caiga</h3>
         <p class="media-hint">Cada evento se documenta hoja por hoja: áreas, montaje, banquete, tiempos de servicio, staff asignado, audio, efectos y responsables. Es el documento que ordena la operación del día y el que le da al cliente —y a tu equipo— la certeza de que nada se está improvisando. Desliza o toca una hoja para verla completa.</p>
         <div class="slides-wrap">
             <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
@@ -691,8 +734,8 @@
 
     <!-- ═══ LOS ROSTROS ═══ -->
     <div class="expo-section">
-        <h3 class="section-title"><i class="fas fa-user-tie"></i> Los rostros de la firma</h3>
-        <p class="section-intro">Un venue no se asocia con un logotipo. Se asocia con quien va a estar ahí el día del evento.</p>
+        <h3 class="section-title"><i class="fas fa-user-tie"></i> Quién va a estar en tu salón ese día</h3>
+        <p class="section-intro">No te asocias con un logotipo. Te asocias con dos personas que van a estar paradas en tu espacio el día del evento, respondiendo por él.</p>
         <div class="rostros-cover"><img src="planners-portada.png" alt="Planners Jessy y Richard — Primavera Events Group"></div>
         <div class="expo-card">
             <div class="expo-content">
@@ -719,8 +762,8 @@
     </div>
 
     <!-- ═══ 5 PILARES ═══ -->
-    <h3 class="section-title"><i class="fas fa-layer-group"></i> La otra mitad: los cinco pilares comerciales</h3>
-    <p class="section-intro">Las siete áreas anteriores son la operación del evento. Estos cinco pilares son la estructura que convierte un espacio bien operado en un espacio que se llena. El marketing es uno de ellos — ninguno funciona solo.</p>
+    <h3 class="section-title"><i class="fas fa-layer-group"></i> Cómo se llena tu calendario</h3>
+    <p class="section-intro">Lo anterior resuelve el evento. Esto resuelve la agenda: los cinco frentes con los que tu espacio pasa de esperar clientes a recibirlos. El marketing es solo uno de los cinco — y ninguno funciona solo.</p>
     <div class="includes-grid">
 
         <div class="include-item">
@@ -814,8 +857,8 @@
     </div>
 
     <!-- ═══ NIVELES ═══ -->
-    <h3 class="section-title"><i class="fas fa-award"></i> Primavera Venue Network</h3>
-    <p class="section-intro">La red es curada: no entra cualquiera. Cada nivel combina una designación dentro del ecosistema y una modalidad de trabajo. Empezar en el primero y subir después es perfectamente válido.</p>
+    <h3 class="section-title"><i class="fas fa-award"></i> Hasta dónde quieres llegar</h3>
+    <p class="section-intro">Tú decides con cuánto entras. Puedes empezar por lo básico y subir cuando veas resultados — la mayoría lo hace así. Lo que no cambia es que la red es curada: no entra cualquier espacio.</p>
     <div class="tier-grid">
 
         <div class="tier-card">
@@ -925,8 +968,8 @@
     </div>
 
     <!-- ═══ COBERTURA ═══ -->
-    <h3 class="section-title"><i class="fas fa-map-location-dot"></i> Cobertura estatal</h3>
-    <p class="section-intro">Un venue estratégico por zona de influencia, para que dos aliados nunca compitan por el mismo cliente. Los niveles I y II permanecen abiertos en toda zona; el Nivel III es el que se asigna territorialmente.</p>
+    <h3 class="section-title"><i class="fas fa-map-location-dot"></i> ¿Tu zona sigue libre?</h3>
+    <p class="section-intro">Solo hay un venue estratégico por zona de influencia — para que dos aliados nunca terminen peleando el mismo cliente. Los niveles I y II siguen abiertos en toda zona; el Nivel III es el que se asigna territorialmente, y cuando una zona se cierra, se cierra.</p>
     <div class="pricing-table-container">
         <table class="pricing-table">
             <thead><tr><th>Zona de influencia</th><th>Nivel III</th><th>Nota</th></tr></thead>
@@ -948,8 +991,8 @@
     <p class="table-note">Estatus al 9 de septiembre de 2026. Una zona asignada sigue recibiendo Venue Partners y Preferred Venues de perfil complementario — nunca competidores directos.</p>
 
     <!-- ═══ RED ACTUAL ═══ -->
-    <h3 class="section-title"><i class="fas fa-building-columns"></i> Espacios ya incorporados</h3>
-    <p class="section-intro">Cada uno tiene su ficha individual dentro del sitio de Primavera Events Group, más la página de su propio paquete. Así se vería tu espacio dentro del sistema.</p>
+    <h3 class="section-title"><i class="fas fa-building-columns"></i> Espacios que ya trabajan así</h3>
+    <p class="section-intro">Cada uno tiene su propia página publicada y su paquete comercial armado. Entra a cualquiera: así es como se vería el tuyo dentro del sistema.</p>
     <div class="pricing-table-container">
         <table class="pricing-table">
             <thead><tr><th>Venue</th><th>Municipio</th></tr></thead>
@@ -971,8 +1014,8 @@
     <p class="table-note">Cartera total: 20 espacios en Morelos.</p>
 
     <!-- ═══ GALERÍA ═══ -->
-    <h3 class="section-title"><i class="fas fa-images"></i> Producción real en nuestros venues</h3>
-    <p class="section-intro">Material producido por nuestra unidad audiovisual en eventos reales. Esto es lo que tu espacio recibiría de cada evento.</p>
+    <h3 class="section-title"><i class="fas fa-images"></i> El material que se queda en tu catálogo</h3>
+    <p class="section-intro">Cada evento que se produce en tu espacio te deja fotografía y video profesional. No lo pagas por separado y no caduca: se vuelve el catálogo con el que vendes las fechas siguientes.</p>
     <div class="gallery-grid">
         <img src="galeria-1.jpg" alt="Ceremonia al aire libre">
         <img src="galeria-2.jpg" alt="Cóctel de bienvenida">
@@ -982,8 +1025,8 @@
 
     <!-- ═══ ACTIVACIONES / EXPO ═══ -->
     <div class="expo-section">
-        <h3 class="section-title"><i class="fas fa-bullhorn"></i> Activaciones propias</h3>
-        <p class="section-intro">No esperamos la temporada. La producimos — y llevamos a nuestros aliados dentro.</p>
+        <h3 class="section-title"><i class="fas fa-bullhorn"></i> Tu espacio, frente a quien ya está decidiendo</h3>
+        <p class="section-intro">No esperamos la temporada: la producimos. Y a nuestros aliados los metemos dentro, frente a familias que ya traen fecha en la cabeza.</p>
         <div class="expo-card">
             <div class="expo-content">
                 <span class="expo-badge">Edición anual</span>
@@ -999,8 +1042,8 @@
 
     <!-- ═══ 10. PUBLICIDAD (obligatoria) ═══ -->
     <div class="publicidad-section">
-        <h3 class="section-title"><i class="fas fa-star"></i> Las verticales que comercializamos</h3>
-        <p class="section-intro">Tu espacio entra a los cuatro embudos comerciales que ya están activos y generando prospectos.</p>
+        <h3 class="section-title"><i class="fas fa-star"></i> Los cuatro mercados que ya están comprando</h3>
+        <p class="section-intro">Tu espacio entra a cuatro embudos que hoy ya están corriendo y generando prospectos. No hay que construirlos: hay que meterte en ellos.</p>
         <div class="publicidad-grid">
             <a class="publicidad-card" href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" rel="noopener"><img src="pub-xv-anos.jpg" alt="XV Años Primavera"></a>
             <a class="publicidad-card" href="https://primaveraeventsgroup.com/bodas/" target="_blank" rel="noopener"><img src="pub-bodas.jpg" alt="Bodas Primavera"></a>
@@ -1010,8 +1053,8 @@
     </div>
 
     <!-- ═══ CRITERIOS ═══ -->
-    <h3 class="section-title"><i class="fas fa-clipboard-check"></i> Criterios de incorporación</h3>
-    <p class="section-intro">La estructura que entregamos tiene un costo real de producción por espacio. Por eso la red es curada y la incorporación siempre empieza con una visita física.</p>
+    <h3 class="section-title"><i class="fas fa-clipboard-check"></i> Qué necesitamos ver en tu espacio</h3>
+    <p class="section-intro">Montar esta estructura sobre un venue cuesta trabajo y dinero reales, así que no la montamos sobre cualquiera. Esto es lo que revisamos — y siempre empieza con una visita física, no con un formulario.</p>
     <ul class="criteria-list">
         <li><span class="num">01</span><p><b>Capacidad y área techada verificables.</b> Cifras medidas en sitio, no estimaciones del folleto.</p></li>
         <li><span class="num">02</span><p><b>Infraestructura operativa.</b> Cocina utilizable para catering profesional, sanitarios suficientes y estacionamiento propio o resuelto.</p></li>
@@ -1081,8 +1124,8 @@
 
     <!-- ═══ 15. CTA ═══ -->
     <div class="cta-container">
-        <h3>Si tu zona sigue abierta, con gusto conocemos tu venue.</h3>
-        <p>Envíanos municipio, capacidad, área techada y algunas fotografías del espacio. Si hay encaje, agendamos visita y te presentamos la propuesta por nivel — sin costo y sin compromiso.</p>
+        <h3>El próximo sábado ya está a la venta. La pregunta es quién lo está vendiendo.</h3>
+        <p>Mándanos municipio, capacidad, área techada y unas fotos de tu espacio. Si tu zona sigue abierta y hay encaje, agendamos la visita y te presentamos la propuesta por nivel — sin costo y sin compromiso.</p>
         <a class="btn-wa" href="https://wa.me/527774587923?text=Hola%2C%20me%20interesa%20el%20programa%20Primavera%20Growth%20Partners%20%28Venue%20Partners%29%20para%20mi%20venue." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quiero ser Venue Partner</a>
         <div class="cta-links">
             <a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener">Richard Hernández</a>

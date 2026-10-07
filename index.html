@@ -324,6 +324,32 @@
             .slide-nav.prev { left:4px; } .slide-nav.next { right:4px; }
             .slides-track { scroll-snap-type:x proximity; overscroll-behavior-x:contain; }
         }
+
+        /* ══ Videos de venues y catalogo de amenidades ══ */
+        .vid-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin-top:22px; }
+        .vid-card { background:var(--white); border:1px solid var(--beige); border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(31,31,31,.06); }
+        .vid-yt { position:relative; width:100%; aspect-ratio:16/9; background:var(--primary-dark) center/cover no-repeat; cursor:pointer; display:block; border:none; padding:0; }
+        .vid-yt::after { content:'\f04b'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; inset:0; margin:auto; width:58px; height:58px; border-radius:50%; background:rgba(246,92,122,.92); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem; padding-left:4px; box-shadow:0 8px 22px rgba(0,0,0,.35); transition:transform .3s ease; }
+        .vid-yt:hover::after { transform:scale(1.12); }
+        .vid-yt iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+        .vid-yt.on::after { display:none; }
+        .vid-card video { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:var(--primary-dark); }
+        .vid-body { padding:14px 18px 18px; }
+        .vid-body h5 { font-family:var(--font-serif); font-size:1.02rem; margin-bottom:4px; }
+        .vid-body p { font-size:.82rem; color:var(--gray-text); line-height:1.5; }
+
+        .amen-sub { font-family:var(--font-serif); font-size:1.08rem; font-weight:600; margin:38px 0 4px; display:flex; align-items:center; gap:9px; }
+        .amen-sub i { color:var(--primary-pink); font-size:.92rem; }
+        .amen-nota { color:var(--gray-text); font-size:.86rem; margin-bottom:14px; }
+        .amen-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(212px,1fr)); gap:16px; }
+        .amen-card { background:var(--white); border:1px solid var(--beige); border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(31,31,31,.05); display:flex; flex-direction:column; }
+        .amen-card > img, .amen-card > video { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--background-light); }
+        .amen-body { padding:13px 15px 16px; }
+        .amen-body h5 { font-family:var(--font-serif); font-size:.97rem; margin:7px 0 5px; line-height:1.3; }
+        .amen-body p { font-size:.79rem; color:var(--gray-text); line-height:1.5; }
+        .pill { display:inline-block; font-size:.62rem; text-transform:uppercase; letter-spacing:.7px; font-weight:700; padding:3px 10px; border-radius:20px; }
+        .pill.inc { background:var(--soft-pink); color:#C33650; }
+        .pill.pago { background:var(--beige); color:var(--gray-text); }
     </style>
 </head>
 <body>
@@ -551,7 +577,7 @@
         </div>
 
         <div class="include-item">
-            <div class="include-img-container"><img src="galeria-2.jpg" alt="Producción audiovisual en evento" class="include-img"></div>
+            <div class="include-img-container"><img src="c-fotografia_video.webp" alt="Equipo de fotografía y video cubriendo un evento" class="include-img"></div>
             <div class="include-content">
                 <span class="include-num">Área 05</span>
                 <h4><i class="fas fa-camera-retro"></i> Marketing digital y contenido</h4>
@@ -566,7 +592,7 @@
         </div>
 
         <div class="include-item">
-            <div class="include-img-container"><img src="serv-activaciones.jpg" alt="Letras gigantes y activaciones" class="include-img"></div>
+            <div class="include-img-container"><img src="c-show_cabezones_real.webp" alt="Show de cabezones durante la fiesta" class="include-img"></div>
             <div class="include-content">
                 <span class="include-num">Área 06</span>
                 <h4><i class="fas fa-star"></i> Proveedores, entretenimiento y complementos</h4>
@@ -692,6 +718,156 @@
         </div>
         <div class="slides-dots"></div>
     </div>
+
+    <!-- ═══ CATÁLOGO DE AMENIDADES ═══ -->
+    <h3 class="section-title"><i class="fas fa-list-check"></i> Todo lo que se puede montar en tu espacio</h3>
+    <p class="section-intro">Este es el catálogo real con el que trabajamos. No lleva precios a propósito: cada evento se arma distinto. Lo que sí marcamos es cómo se maneja normalmente cada cosa — <b>lo que va incluido dentro de un paquete</b> y <b>lo que se suma aparte</b>. Tu espacio deja de tener que conseguir cualquiera de estas cosas: llegan montadas.</p>
+    <h4 class="amen-sub"><i class="fas fa-music"></i> Música en vivo y show</h4>
+    <p class="amen-nota">Tres formatos distintos que cambian por completo el ánimo de una noche. Se contratan por evento según lo que la familia quiera.</p>
+    <div class="amen-grid">
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_saxofonista_poster.webp"><source src="c-musica_vivo_saxofonista.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Saxofonista en vivo</h5><p>Entra en el cóctel o en el vals. El formato más elegante y el más pedido.</p></div>
+            </div>
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_banda_poster.webp"><source src="c-musica_vivo_banda.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Banda y música en vivo</h5><p>Banda, mariachi o grupo versátil para el bloque fuerte de la fiesta.</p></div>
+            </div>
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_chinelos_poster.webp"><source src="c-musica_vivo_chinelos.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Chinelos de Morelos</h5><p>Tradición local que levanta a todos. Marca el evento como morelense.</p></div>
+            </div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-wand-magic-sparkles"></i> Entretenimiento y experiencias</h4>
+    <p class="amen-nota">Lo que hace que la gente se levante de la mesa y que el evento se vea en redes al día siguiente.</p>
+    <div class="amen-grid">
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-cabina_360.webp"><source src="c-cabina_360_video.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Cabina de experiencia 360°</h5><p>Video giratorio que el invitado se lleva al instante. También en versión inflable o espejo.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-robot_leds.webp" alt="Robot LED interactivo" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Robot LED interactivo</h5><p>Baila con los invitados y abre la pista. El momento más grabado de la noche.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-show_cabezones_real.webp" alt="Show de cabezones" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Show de cabezones</h5><p>Irrumpe cuando la pista empieza a bajar y la vuelve a llenar.</p></div>
+            </div>
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-magazine_cover_booth_poster.webp"><source src="c-magazine_cover_booth.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Magazine Cover Booth</h5><p>El invitado sale en portada de revista y se lleva la impresión.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-cabina_inflable_fotos.webp" alt="Cabina inflable de fotos" loading="lazy">
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Cabina inflable de fotos</h5><p>Cabina cerrada con props, para los que no se animan frente a la cámara abierta.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-dinamica_mazo_retos.webp" alt="Dinámica del mazo de retos" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Dinámica del mazo de retos</h5><p>Juego dirigido por el animador que rompe el hielo entre mesas.</p></div>
+            </div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-lightbulb"></i> Audio, iluminación y pista</h4>
+    <p class="amen-nota">La producción técnica que convierte un salón en un escenario. Se monta y se desmonta el mismo día.</p>
+    <div class="amen-grid">
+            <div class="amen-card"><img src="c-pista_leds_5x5.webp" alt="Pista de baile LED 5×5 m" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Pista de baile LED 5×5 m</h5><p>Pista pixel inteligente. Cambia el centro visual del salón por completo.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-dj_mampara_cabina.webp" alt="DJ con cabina y mampara" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>DJ con cabina y mampara</h5><p>Audio profesional, cabezas robóticas, láser y máquina de humo.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-pantalla_proyector.webp" alt="Pantalla y torres robóticas" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Pantalla y torres robóticas</h5><p>Proyección del video de la familia y torres de iluminación móvil.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-letras_gigantes_iluminadas.webp" alt="Letras gigantes iluminadas" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Letras gigantes iluminadas</h5><p>XV, LOVE o el nombre. El punto de foto obligado de la noche.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-corazon_rojo_iluminado.webp" alt="Corazón iluminado" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Corazón iluminado</h5><p>Pieza decorativa de entrada, lista para la foto de llegada.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-pirotecnia_fria_chisperos.webp" alt="Chisperos y pirotecnia fría" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Chisperos y pirotecnia fría</h5><p>Para la entrada, el brindis o el vals. Sin humo y sin riesgo en interiores.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-amenidades_pista.webp" alt="Amenidades de pista" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Amenidades de pista</h5><p>Pulseras neón, collares, antifaces y globos para el bloque de fiesta.</p></div>
+            </div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-martini-glass-citrus"></i> Barra, bebidas y mesa</h4>
+    <p class="amen-nota">La parte que más se recuerda al día siguiente, y donde más se nota si hay oficio detrás de la barra.</p>
+    <div class="amen-grid">
+            <div class="amen-card"><img src="c-barra_mixologia_1.webp" alt="Barra de mixología" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Barra de mixología</h5><p>Barmen profesionales preparando al momento, no solo sirviendo.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-barra_snacks_real.webp" alt="Barra de snacks con 12 toppings" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Barra de snacks con 12 toppings</h5><p>Estación dulce y salada abierta durante el cóctel.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-mezcladores.webp" alt="Mezcladores y descorche libre" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Mezcladores y descorche libre</h5><p>La familia ingresa su alcohol y la barra opera hielo, servicio y mezcladores.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-aguas_frescas.webp" alt="Aguas frescas y cóctel sin alcohol" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Aguas frescas y cóctel sin alcohol</h5><p>Margaritas, piñada y mojito sin alcohol para la bienvenida.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-cristaleria.webp" alt="Cristalería y barra premium" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Cristalería y barra premium</h5><p>Cristalería fina de color, loza y plaqué a juego con la paleta del evento.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-tornafiesta_maruchan_esquites.webp" alt="Tornafiesta" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Tornafiesta</h5><p>Esquites o chilaquiles al cierre, cuando la fiesta ya pidió segundo aire.</p></div>
+            </div>
+            <div class="amen-card"><video controls preload="none" playsinline poster="c-mesa_pastel.webp"><source src="c-video_pastel.mp4" type="video/mp4"></video>
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Pastel de autor</h5><p>Diseñado a la medida del evento, según pisos y temática.</p></div>
+            </div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-camera"></i> Contenido, recuerdo y marca</h4>
+    <p class="amen-nota">Lo que queda después del sábado — para la familia y para el catálogo de tu espacio.</p>
+    <div class="amen-grid">
+            <div class="amen-card"><img src="c-fotografia_video.webp" alt="Fotografía y video profesional" loading="lazy">
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Fotografía y video profesional</h5><p>Doble cámara de cine, dron 4K, álbumes y photobooks de gran formato.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-invitacion_digital.webp" alt="Invitación digital premium" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Invitación digital premium</h5><p>Con RSVP automático, mapa, galería en vivo por QR y música. Va de cortesía.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-buenos_deseos_video.webp" alt="Buenos deseos en video" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Buenos deseos en video</h5><p>Los invitados graban su mensaje y se entrega editado a la familia.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-souvenirs_personalizados.webp" alt="Souvenirs personalizados" loading="lazy">
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Souvenirs personalizados</h5><p>Desde tequila grabado a detalle de mesa, con el nombre del evento.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-servicio_cafe.webp" alt="Servicio de café" loading="lazy">
+                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Servicio de café</h5><p>Estación de café para el cierre de la noche.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-limusinas.webp" alt="Limusinas y transporte" loading="lazy">
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Limusinas y transporte</h5><p>Traslado de los anfitriones y transporte masivo de invitados.</p></div>
+            </div>
+            <div class="amen-card"><img src="c-servicios_emergencia.webp" alt="Servicios prehospitalarios" loading="lazy">
+                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Servicios prehospitalarios</h5><p>Personal y equipo en sitio durante todo el evento.</p></div>
+            </div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-shirt"></i> Merchandising del evento</h4>
+    <p class="amen-nota">Línea de producto personalizada para la familia y sus invitados: playeras, gorras, bolsas y accesorios con la identidad del evento. <span class="pill pago" style="margin-left:4px">Se suma aparte</span></p>
+    <div class="slides-section slides-fotos" style="margin-top:0">
+        <div class="slides-wrap">
+            <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="slides-track">
+                <div class="slide"><img src="c-merchandising_store_1.webp" alt="Merchandising del evento 1" loading="lazy"></div>
+                <div class="slide"><img src="c-merchandising_store_2.webp" alt="Merchandising del evento 2" loading="lazy"></div>
+                <div class="slide"><img src="c-merchandising_store_3.webp" alt="Merchandising del evento 3" loading="lazy"></div>
+                <div class="slide"><img src="c-merchandising_store_4.webp" alt="Merchandising del evento 4" loading="lazy"></div>
+                <div class="slide"><img src="c-merchandising_store_5.webp" alt="Merchandising del evento 5" loading="lazy"></div>
+            </div>
+            <button class="slide-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slides-dots"></div>
+    </div>
+
+    <h4 class="amen-sub"><i class="fas fa-utensils"></i> La propuesta gastronómica y el contenido, en video</h4>
+    <p class="amen-nota">Dos piezas que explican mejor que cualquier lista lo que se sirve y lo que se publica después.</p>
+    <div class="vid-grid">
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/AE4I0F00-BI?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/AE4I0F00-BI/hqdefault.jpg)" aria-label="Reproducir: Propuesta gastronómica y menús"></button>
+                <div class="vid-body"><h5>Propuesta gastronómica y menús</h5><p>El banquete completo: tiempos, emplatado y las opciones que la familia elige en la degustación.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7r6OV9qjS30?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/7r6OV9qjS30/hqdefault.jpg)" aria-label="Reproducir: Social Media Content en acción"></button>
+                <div class="vid-body"><h5>Social Media Content en acción</h5><p>Cómo se cubre un evento para redes y qué se publica después. Este material también queda para tu espacio.</p></div>
+            </div>
+    </div>
+
+    <p class="table-note">Lo que entra incluido cambia según el paquete, la escala del evento y el venue. Las etiquetas de arriba reflejan cómo se maneja habitualmente, no una regla fija.</p>
 
     <!-- ═══ RENDER 3D DEL ESPACIO ═══ -->
     <div class="video-section">
@@ -1013,6 +1189,45 @@
     <p class="table-note">Cada espacio de la red tiene su propia página publicada: la mayoría dentro del sitio de Primavera Events Group con la página de su paquete, y <b>Solaire</b> y <b>Villa Leona</b> con sitio propio e independiente. Toca cualquier nombre para verlo.</p>
     <p class="table-note">Cartera total: 20 espacios en Morelos.</p>
 
+    <!-- ═══ VIDEOS DE LOS ESPACIOS ═══ -->
+    <h3 class="section-title"><i class="fas fa-play"></i> Así se ven hoy los espacios de la red</h3>
+    <p class="section-intro">No son recorridos de folleto: son eventos reales, grabados por nuestra unidad audiovisual en los espacios con los que ya trabajamos. Míralos como lo que son — el material que cada uno de esos venues hoy tiene para vender, y que antes de la alianza no tenía.</p>
+    <div class="vid-grid">
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/W0IPzy0dFwk?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/W0IPzy0dFwk/hqdefault.jpg)" aria-label="Reproducir: Centro de Convenciones Presidente"></button>
+                <div class="vid-body"><h5>Centro de Convenciones Presidente</h5><p>Cuernavaca · Chamilpa. Salón techado climatizado, terraza, área infantil y estacionamiento vigilado.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/5xVqNRu6nu8?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/5xVqNRu6nu8/hqdefault.jpg)" aria-label="Reproducir: Jardín Tsu Nuum"></button>
+                <div class="vid-body"><h5>Jardín Tsu Nuum</h5><p>Xochitepec. Jardín zen con cúpula, cascada de piedra volcánica y área techada para banquete.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ueZsbvdCTew?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/ueZsbvdCTew/hqdefault.jpg)" aria-label="Reproducir: Salón Los Caballos"></button>
+                <div class="vid-body"><h5>Salón Los Caballos</h5><p>Cuernavaca · Ocotepec. Hacienda de gran escala con establos de exhibición y explanadas de jardín.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ZNp4mtpJKhA?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/ZNp4mtpJKhA/hqdefault.jpg)" aria-label="Reproducir: Salón Jardín Yolomecatl"></button>
+                <div class="vid-body"><h5>Salón Jardín Yolomecatl</h5><p>Temixco. Complejo señorial con capilla consagrada en sitio y jardines amplios.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/G83q4Ml9RmY?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/G83q4Ml9RmY/hqdefault.jpg)" aria-label="Reproducir: Quinta Zarabanda"></button>
+                <div class="vid-body"><h5>Quinta Zarabanda</h5><p>Temixco. Finca campestre íntima, con suite nupcial y áreas de descanso.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7f5Wv9f0qCw?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/7f5Wv9f0qCw/hqdefault.jpg)" aria-label="Reproducir: Jardín La Flor"></button>
+                <div class="vid-body"><h5>Jardín La Flor</h5><p>Jiutepec. Jardín clásico cuernavaquense, fresco y con área consagrada para ceremonia.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/wcx5okVWjTc?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/wcx5okVWjTc/hqdefault.jpg)" aria-label="Reproducir: Salón Manzanares · evento corporativo"></button>
+                <div class="vid-body"><h5>Salón Manzanares · evento corporativo</h5><p>Montaje corporativo para Compartamos Banco. El mismo aparato opera eventos de empresa, no solo sociales.</p></div>
+            </div>
+            <div class="vid-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/OPvDDQyM3Hc?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/OPvDDQyM3Hc/hqdefault.jpg)" aria-label="Reproducir: Varios espacios de la red"></button>
+                <div class="vid-body"><h5>Varios espacios de la red</h5><p>Concentrado de distintos salones y jardines trabajados por Primavera Events Group.</p></div>
+            </div>
+    </div>
+    <p class="table-note">Cada uno de estos videos se produjo dentro del programa, sin que el venue pagara una producción aparte. Es el tipo de material que tu espacio empezaría a generar desde el primer evento.</p>
+
     <!-- ═══ GALERÍA ═══ -->
     <h3 class="section-title"><i class="fas fa-images"></i> El material que se queda en tu catálogo</h3>
     <p class="section-intro">Cada evento que se produce en tu espacio te deja fotografía y video profesional. No lo pagas por separado y no caduca: se vuelve el catálogo con el que vendes las fechas siguientes.</p>
@@ -1287,6 +1502,20 @@
             sl.addEventListener('click', function () { abre(fuentes, k); });
         });
         marca();
+    });
+
+    // ── YouTube diferido: la miniatura es un boton, el iframe entra al hacer clic ──
+    Array.prototype.forEach.call(document.querySelectorAll('.vid-yt'), function (btn) {
+        btn.addEventListener('click', function () {
+            if (btn.classList.contains('on')) return;
+            var f = document.createElement('iframe');
+            f.src = btn.getAttribute('data-src');
+            f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+            f.allowFullscreen = true;
+            f.loading = 'lazy';
+            btn.appendChild(f);
+            btn.classList.add('on');
+        });
     });
 
     document.getElementById('visorCerrar').addEventListener('click', cierra);

@@ -349,7 +349,13 @@
         .amen-dual video, .amen-dual img { width:50%; height:100%; object-fit:cover; display:block; padding:0; background:var(--primary-dark); }
         .triptico-horizontal { display:flex; gap:2px; width:100%; border-radius:18px; overflow:hidden; background:#000; box-shadow:0 12px 30px rgba(0,0,0,.15); }
         .triptico-horizontal .triptico-panel { flex:1 1 0; aspect-ratio:9/16; min-width:0; }
-        .triptico-horizontal video { width:100%; height:100%; object-fit:cover; display:block; }
+        .triptico-horizontal video, .triptico-horizontal img { width:100%; height:100%; object-fit:cover; display:block; }
+        /* El video de YouTube es 16:9; dentro de un panel vertical o 4:3 se escala
+           y se recorta por los lados, igual que haria object-fit:cover en una imagen. */
+        .triptico-horizontal .vid-yt { aspect-ratio:auto; height:100%; border-radius:0; overflow:hidden; }
+        .triptico-horizontal .vid-yt iframe { position:absolute; top:50%; left:50%; width:316%; height:100%; transform:translate(-50%,-50%); }
+        .amen-card > .vid-yt { aspect-ratio:4/3; overflow:hidden; }
+        .amen-card > .vid-yt iframe { position:absolute; top:50%; left:50%; width:133.4%; height:100%; transform:translate(-50%,-50%); }
         .amen-body { padding:13px 15px 16px; }
         .amen-body h5 { font-family:var(--font-serif); font-size:.97rem; margin:7px 0 5px; line-height:1.3; }
         .amen-body p { font-size:.79rem; color:var(--gray-text); line-height:1.5; }
@@ -742,7 +748,8 @@
             <div class="amen-card"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-cabina_360.webp"><source src="c-cabina_360_video.mp4" type="video/mp4"></video>
                 <div class="amen-body"><h5>Cabina de experiencia 360°</h5><p>Video giratorio que el invitado se lleva al instante. También en versión inflable o espejo.</p></div>
             </div>
-            <div class="amen-card"><img src="c-robot_leds.webp" alt="Robot LED interactivo" loading="lazy">
+            <div class="amen-card">
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/AjOVYnYQ6cQ?autoplay=1&mute=1&loop=1&playlist=AjOVYnYQ6cQ&rel=0&playsinline=1&start=225" style="background-image:url(c-robot_leds.webp)" aria-label="Reproducir: Robot LED interactivo"></button>
                 <div class="amen-body"><h5>Robot LED interactivo</h5><p>Baila con los invitados y abre la pista. El momento más grabado de la noche.</p></div>
             </div>
             <div class="amen-card"><img src="c-show_cabezones_real.webp" alt="Show de cabezones" loading="lazy">
@@ -786,11 +793,13 @@
     </div>
 
     <h4 class="amen-sub"><i class="fas fa-martini-glass-citrus"></i> Barra, bebidas y mesa</h4>
-    <p class="amen-nota">La parte que más se recuerda al día siguiente, y donde más se nota si hay oficio detrás de la barra.</p>
+    <p class="amen-nota">La parte que más se recuerda al día siguiente, y donde más se nota si hay oficio detrás de la barra. Coctelería de autor con mixólogo en vivo, preparando frente al invitado.</p>
+    <div class="triptico-horizontal" style="margin-bottom:18px">
+        <div class="triptico-panel"><img src="c-barra_mixologia_1.webp" alt="Barra de mixología montada" loading="lazy"></div>
+        <div class="triptico-panel"><img src="c-barra_mixologia_2.webp" alt="Coctelería de autor en barra" loading="lazy"></div>
+        <div class="triptico-panel"><button class="vid-yt" data-src="https://www.youtube.com/embed/AjOVYnYQ6cQ?autoplay=1&mute=1&loop=1&playlist=AjOVYnYQ6cQ&rel=0&playsinline=1&start=197&end=206" aria-label="Reproducir: mixólogo en vivo"></button></div>
+    </div>
     <div class="amen-grid">
-            <div class="amen-card"><img src="c-barra_mixologia_1.webp" alt="Barra de mixología" loading="lazy">
-                <div class="amen-body"><h5>Barra de mixología</h5><p>Barmen profesionales preparando al momento, no solo sirviendo.</p></div>
-            </div>
             <div class="amen-card"><img src="c-barra_snacks_real.webp" alt="Barra de snacks con 12 toppings" loading="lazy">
                 <div class="amen-body"><h5>Barra de snacks con 12 toppings</h5><p>Estación dulce y salada abierta durante el cóctel.</p></div>
             </div>
@@ -858,11 +867,11 @@
     <p class="amen-nota">Dos piezas que explican mejor que cualquier lista lo que se sirve y lo que se publica después.</p>
     <div class="vid-grid">
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/AE4I0F00-BI?autoplay=1&mute=1&loop=1&playlist=AE4I0F00-BI&rel=0" style="background-image:url(https://img.youtube.com/vi/AE4I0F00-BI/hqdefault.jpg)" aria-label="Reproducir: Propuesta gastronómica y menús"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/AE4I0F00-BI?autoplay=1&mute=1&loop=1&playlist=AE4I0F00-BI&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/AE4I0F00-BI/hqdefault.jpg)" aria-label="Reproducir: Propuesta gastronómica y menús"></button>
                 <div class="vid-body"><h5>Propuesta gastronómica y menús</h5><p>El banquete completo: tiempos, emplatado y las opciones que la familia elige en la degustación.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/7r6OV9qjS30?autoplay=1&mute=1&loop=1&playlist=7r6OV9qjS30&rel=0" style="background-image:url(https://img.youtube.com/vi/7r6OV9qjS30/hqdefault.jpg)" aria-label="Reproducir: Social Media Content en acción"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7r6OV9qjS30?autoplay=1&mute=1&loop=1&playlist=7r6OV9qjS30&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/7r6OV9qjS30/hqdefault.jpg)" aria-label="Reproducir: Social Media Content en acción"></button>
                 <div class="vid-body"><h5>Social Media Content en acción</h5><p>Cómo se cubre un evento para redes y qué se publica después. Este material también queda para tu espacio.</p></div>
             </div>
     </div>
@@ -1194,35 +1203,35 @@
     <p class="section-intro">No son recorridos de folleto: son eventos reales, grabados por nuestra unidad audiovisual en los espacios con los que ya trabajamos. Míralos como lo que son — el material que cada uno de esos venues hoy tiene para vender, y que antes de la alianza no tenía.</p>
     <div class="vid-grid">
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/W0IPzy0dFwk?autoplay=1&mute=1&loop=1&playlist=W0IPzy0dFwk&rel=0" style="background-image:url(https://img.youtube.com/vi/W0IPzy0dFwk/hqdefault.jpg)" aria-label="Reproducir: Centro de Convenciones Presidente"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/W0IPzy0dFwk?autoplay=1&mute=1&loop=1&playlist=W0IPzy0dFwk&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/W0IPzy0dFwk/hqdefault.jpg)" aria-label="Reproducir: Centro de Convenciones Presidente"></button>
                 <div class="vid-body"><h5>Centro de Convenciones Presidente</h5><p>Cuernavaca · Chamilpa. Salón techado climatizado, terraza, área infantil y estacionamiento vigilado.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/5xVqNRu6nu8?autoplay=1&mute=1&loop=1&playlist=5xVqNRu6nu8&rel=0" style="background-image:url(https://img.youtube.com/vi/5xVqNRu6nu8/hqdefault.jpg)" aria-label="Reproducir: Jardín Tsu Nuum"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/5xVqNRu6nu8?autoplay=1&mute=1&loop=1&playlist=5xVqNRu6nu8&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/5xVqNRu6nu8/hqdefault.jpg)" aria-label="Reproducir: Jardín Tsu Nuum"></button>
                 <div class="vid-body"><h5>Jardín Tsu Nuum</h5><p>Xochitepec. Jardín zen con cúpula, cascada de piedra volcánica y área techada para banquete.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/ueZsbvdCTew?autoplay=1&mute=1&loop=1&playlist=ueZsbvdCTew&rel=0" style="background-image:url(https://img.youtube.com/vi/ueZsbvdCTew/hqdefault.jpg)" aria-label="Reproducir: Salón Los Caballos"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ueZsbvdCTew?autoplay=1&mute=1&loop=1&playlist=ueZsbvdCTew&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/ueZsbvdCTew/hqdefault.jpg)" aria-label="Reproducir: Salón Los Caballos"></button>
                 <div class="vid-body"><h5>Salón Los Caballos</h5><p>Cuernavaca · Ocotepec. Hacienda de gran escala con establos de exhibición y explanadas de jardín.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/ZNp4mtpJKhA?autoplay=1&mute=1&loop=1&playlist=ZNp4mtpJKhA&rel=0" style="background-image:url(https://img.youtube.com/vi/ZNp4mtpJKhA/hqdefault.jpg)" aria-label="Reproducir: Salón Jardín Yolomecatl"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ZNp4mtpJKhA?autoplay=1&mute=1&loop=1&playlist=ZNp4mtpJKhA&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/ZNp4mtpJKhA/hqdefault.jpg)" aria-label="Reproducir: Salón Jardín Yolomecatl"></button>
                 <div class="vid-body"><h5>Salón Jardín Yolomecatl</h5><p>Temixco. Complejo señorial con capilla consagrada en sitio y jardines amplios.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/G83q4Ml9RmY?autoplay=1&mute=1&loop=1&playlist=G83q4Ml9RmY&rel=0" style="background-image:url(https://img.youtube.com/vi/G83q4Ml9RmY/hqdefault.jpg)" aria-label="Reproducir: Quinta Zarabanda"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/G83q4Ml9RmY?autoplay=1&mute=1&loop=1&playlist=G83q4Ml9RmY&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/G83q4Ml9RmY/hqdefault.jpg)" aria-label="Reproducir: Quinta Zarabanda"></button>
                 <div class="vid-body"><h5>Quinta Zarabanda</h5><p>Temixco. Finca campestre íntima, con suite nupcial y áreas de descanso.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/7f5Wv9f0qCw?autoplay=1&mute=1&loop=1&playlist=7f5Wv9f0qCw&rel=0" style="background-image:url(https://img.youtube.com/vi/7f5Wv9f0qCw/hqdefault.jpg)" aria-label="Reproducir: Jardín La Flor"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7f5Wv9f0qCw?autoplay=1&mute=1&loop=1&playlist=7f5Wv9f0qCw&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/7f5Wv9f0qCw/hqdefault.jpg)" aria-label="Reproducir: Jardín La Flor"></button>
                 <div class="vid-body"><h5>Jardín La Flor</h5><p>Jiutepec. Jardín clásico cuernavaquense, fresco y con área consagrada para ceremonia.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/wcx5okVWjTc?autoplay=1&mute=1&loop=1&playlist=wcx5okVWjTc&rel=0" style="background-image:url(https://img.youtube.com/vi/wcx5okVWjTc/hqdefault.jpg)" aria-label="Reproducir: Salón Manzanares · evento corporativo"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/wcx5okVWjTc?autoplay=1&mute=1&loop=1&playlist=wcx5okVWjTc&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/wcx5okVWjTc/hqdefault.jpg)" aria-label="Reproducir: Salón Manzanares · evento corporativo"></button>
                 <div class="vid-body"><h5>Salón Manzanares · evento corporativo</h5><p>Montaje corporativo para Compartamos Banco. El mismo aparato opera eventos de empresa, no solo sociales.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/OPvDDQyM3Hc?autoplay=1&mute=1&loop=1&playlist=OPvDDQyM3Hc&rel=0" style="background-image:url(https://img.youtube.com/vi/OPvDDQyM3Hc/hqdefault.jpg)" aria-label="Reproducir: Varios espacios de la red"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/OPvDDQyM3Hc?autoplay=1&mute=1&loop=1&playlist=OPvDDQyM3Hc&rel=0&playsinline=1" style="background-image:url(https://img.youtube.com/vi/OPvDDQyM3Hc/hqdefault.jpg)" aria-label="Reproducir: Varios espacios de la red"></button>
                 <div class="vid-body"><h5>Varios espacios de la red</h5><p>Concentrado de distintos salones y jardines trabajados por Primavera Events Group.</p></div>
             </div>
     </div>

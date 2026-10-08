@@ -345,6 +345,8 @@
         .amen-card { background:var(--white); border:1px solid var(--beige); border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(31,31,31,.05); display:flex; flex-direction:column; }
         .amen-card > img { width:100%; aspect-ratio:4/3; object-fit:contain; display:block; background:var(--background-light); padding:6px; }
         .amen-card > video { width:100%; aspect-ratio:4/3; object-fit:contain; display:block; background:var(--primary-dark); }
+        .amen-dual { display:flex; gap:2px; width:100%; aspect-ratio:4/3; background:var(--primary-dark); }
+        .amen-dual video, .amen-dual img { width:50%; height:100%; object-fit:cover; display:block; padding:0; background:var(--primary-dark); }
         .triptico-horizontal { display:flex; gap:2px; width:100%; border-radius:18px; overflow:hidden; background:#000; box-shadow:0 12px 30px rgba(0,0,0,.15); }
         .triptico-horizontal .triptico-panel { flex:1 1 0; aspect-ratio:9/16; min-width:0; }
         .triptico-horizontal video { width:100%; height:100%; object-fit:cover; display:block; }
@@ -746,7 +748,7 @@
             <div class="amen-card"><img src="c-show_cabezones_real.webp" alt="Show de cabezones" loading="lazy">
                 <div class="amen-body"><h5>Show de cabezones</h5><p>Irrumpe cuando la pista empieza a bajar y la vuelve a llenar.</p></div>
             </div>
-            <div class="amen-card"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-magazine_cover_booth_poster.webp"><source src="c-magazine_cover_booth.mp4" type="video/mp4"></video>
+            <div class="amen-card"><div class="amen-dual"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-magazine_cover_booth_poster.webp"><source src="c-magazine_cover_booth.mp4" type="video/mp4"></video><img src="c-magazine_cover_booth_2.webp" alt="Portada de revista impresa del Magazine Cover Booth" loading="lazy"></div>
                 <div class="amen-body"><h5>Magazine Cover Booth</h5><p>El invitado sale en portada de revista y se lleva la impresión.</p></div>
             </div>
             <div class="amen-card"><img src="c-cabina_inflable_fotos.webp" alt="Cabina inflable de fotos" loading="lazy">
@@ -856,11 +858,11 @@
     <p class="amen-nota">Dos piezas que explican mejor que cualquier lista lo que se sirve y lo que se publica después.</p>
     <div class="vid-grid">
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/AE4I0F00-BI?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/AE4I0F00-BI/hqdefault.jpg)" aria-label="Reproducir: Propuesta gastronómica y menús"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/AE4I0F00-BI?autoplay=1&mute=1&loop=1&playlist=AE4I0F00-BI&rel=0" style="background-image:url(https://img.youtube.com/vi/AE4I0F00-BI/hqdefault.jpg)" aria-label="Reproducir: Propuesta gastronómica y menús"></button>
                 <div class="vid-body"><h5>Propuesta gastronómica y menús</h5><p>El banquete completo: tiempos, emplatado y las opciones que la familia elige en la degustación.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/7r6OV9qjS30?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/7r6OV9qjS30/hqdefault.jpg)" aria-label="Reproducir: Social Media Content en acción"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7r6OV9qjS30?autoplay=1&mute=1&loop=1&playlist=7r6OV9qjS30&rel=0" style="background-image:url(https://img.youtube.com/vi/7r6OV9qjS30/hqdefault.jpg)" aria-label="Reproducir: Social Media Content en acción"></button>
                 <div class="vid-body"><h5>Social Media Content en acción</h5><p>Cómo se cubre un evento para redes y qué se publica después. Este material también queda para tu espacio.</p></div>
             </div>
     </div>
@@ -1192,35 +1194,35 @@
     <p class="section-intro">No son recorridos de folleto: son eventos reales, grabados por nuestra unidad audiovisual en los espacios con los que ya trabajamos. Míralos como lo que son — el material que cada uno de esos venues hoy tiene para vender, y que antes de la alianza no tenía.</p>
     <div class="vid-grid">
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/W0IPzy0dFwk?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/W0IPzy0dFwk/hqdefault.jpg)" aria-label="Reproducir: Centro de Convenciones Presidente"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/W0IPzy0dFwk?autoplay=1&mute=1&loop=1&playlist=W0IPzy0dFwk&rel=0" style="background-image:url(https://img.youtube.com/vi/W0IPzy0dFwk/hqdefault.jpg)" aria-label="Reproducir: Centro de Convenciones Presidente"></button>
                 <div class="vid-body"><h5>Centro de Convenciones Presidente</h5><p>Cuernavaca · Chamilpa. Salón techado climatizado, terraza, área infantil y estacionamiento vigilado.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/5xVqNRu6nu8?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/5xVqNRu6nu8/hqdefault.jpg)" aria-label="Reproducir: Jardín Tsu Nuum"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/5xVqNRu6nu8?autoplay=1&mute=1&loop=1&playlist=5xVqNRu6nu8&rel=0" style="background-image:url(https://img.youtube.com/vi/5xVqNRu6nu8/hqdefault.jpg)" aria-label="Reproducir: Jardín Tsu Nuum"></button>
                 <div class="vid-body"><h5>Jardín Tsu Nuum</h5><p>Xochitepec. Jardín zen con cúpula, cascada de piedra volcánica y área techada para banquete.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/ueZsbvdCTew?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/ueZsbvdCTew/hqdefault.jpg)" aria-label="Reproducir: Salón Los Caballos"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ueZsbvdCTew?autoplay=1&mute=1&loop=1&playlist=ueZsbvdCTew&rel=0" style="background-image:url(https://img.youtube.com/vi/ueZsbvdCTew/hqdefault.jpg)" aria-label="Reproducir: Salón Los Caballos"></button>
                 <div class="vid-body"><h5>Salón Los Caballos</h5><p>Cuernavaca · Ocotepec. Hacienda de gran escala con establos de exhibición y explanadas de jardín.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/ZNp4mtpJKhA?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/ZNp4mtpJKhA/hqdefault.jpg)" aria-label="Reproducir: Salón Jardín Yolomecatl"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/ZNp4mtpJKhA?autoplay=1&mute=1&loop=1&playlist=ZNp4mtpJKhA&rel=0" style="background-image:url(https://img.youtube.com/vi/ZNp4mtpJKhA/hqdefault.jpg)" aria-label="Reproducir: Salón Jardín Yolomecatl"></button>
                 <div class="vid-body"><h5>Salón Jardín Yolomecatl</h5><p>Temixco. Complejo señorial con capilla consagrada en sitio y jardines amplios.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/G83q4Ml9RmY?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/G83q4Ml9RmY/hqdefault.jpg)" aria-label="Reproducir: Quinta Zarabanda"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/G83q4Ml9RmY?autoplay=1&mute=1&loop=1&playlist=G83q4Ml9RmY&rel=0" style="background-image:url(https://img.youtube.com/vi/G83q4Ml9RmY/hqdefault.jpg)" aria-label="Reproducir: Quinta Zarabanda"></button>
                 <div class="vid-body"><h5>Quinta Zarabanda</h5><p>Temixco. Finca campestre íntima, con suite nupcial y áreas de descanso.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/7f5Wv9f0qCw?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/7f5Wv9f0qCw/hqdefault.jpg)" aria-label="Reproducir: Jardín La Flor"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/7f5Wv9f0qCw?autoplay=1&mute=1&loop=1&playlist=7f5Wv9f0qCw&rel=0" style="background-image:url(https://img.youtube.com/vi/7f5Wv9f0qCw/hqdefault.jpg)" aria-label="Reproducir: Jardín La Flor"></button>
                 <div class="vid-body"><h5>Jardín La Flor</h5><p>Jiutepec. Jardín clásico cuernavaquense, fresco y con área consagrada para ceremonia.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/wcx5okVWjTc?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/wcx5okVWjTc/hqdefault.jpg)" aria-label="Reproducir: Salón Manzanares · evento corporativo"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/wcx5okVWjTc?autoplay=1&mute=1&loop=1&playlist=wcx5okVWjTc&rel=0" style="background-image:url(https://img.youtube.com/vi/wcx5okVWjTc/hqdefault.jpg)" aria-label="Reproducir: Salón Manzanares · evento corporativo"></button>
                 <div class="vid-body"><h5>Salón Manzanares · evento corporativo</h5><p>Montaje corporativo para Compartamos Banco. El mismo aparato opera eventos de empresa, no solo sociales.</p></div>
             </div>
             <div class="vid-card">
-                <button class="vid-yt" data-src="https://www.youtube.com/embed/OPvDDQyM3Hc?autoplay=1&rel=0" style="background-image:url(https://img.youtube.com/vi/OPvDDQyM3Hc/hqdefault.jpg)" aria-label="Reproducir: Varios espacios de la red"></button>
+                <button class="vid-yt" data-src="https://www.youtube.com/embed/OPvDDQyM3Hc?autoplay=1&mute=1&loop=1&playlist=OPvDDQyM3Hc&rel=0" style="background-image:url(https://img.youtube.com/vi/OPvDDQyM3Hc/hqdefault.jpg)" aria-label="Reproducir: Varios espacios de la red"></button>
                 <div class="vid-body"><h5>Varios espacios de la red</h5><p>Concentrado de distintos salones y jardines trabajados por Primavera Events Group.</p></div>
             </div>
     </div>
@@ -1540,17 +1542,30 @@
     });
 
     // ── YouTube diferido: la miniatura es un boton, el iframe entra al hacer clic ──
-    Array.prototype.forEach.call(document.querySelectorAll('.vid-yt'), function (btn) {
-        btn.addEventListener('click', function () {
-            if (btn.classList.contains('on')) return;
-            var f = document.createElement('iframe');
-            f.src = btn.getAttribute('data-src');
-            f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-            f.allowFullscreen = true;
-            f.loading = 'lazy';
-            btn.appendChild(f);
-            btn.classList.add('on');
+    function montaYT(btn) {
+        if (btn.classList.contains('on')) return;
+        var f = document.createElement('iframe');
+        f.src = btn.getAttribute('data-src');
+        f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+        f.allowFullscreen = true;
+        btn.appendChild(f);
+        btn.classList.add('on');
+    }
+    function desmontaYT(btn) {
+        if (!btn.classList.contains('on')) return;
+        btn.innerHTML = '';
+        btn.classList.remove('on');
+    }
+    // Los de YouTube tambien arrancan solos: se montan al entrar en pantalla y se
+    // descartan al salir, para no tener diez reproductores vivos al mismo tiempo.
+    var obsYT = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) montaYT(e.target); else desmontaYT(e.target);
         });
+    }, { threshold: 0.45 }) : null;
+    Array.prototype.forEach.call(document.querySelectorAll('.vid-yt'), function (btn) {
+        btn.addEventListener('click', function () { montaYT(btn); });
+        if (obsYT) obsYT.observe(btn);
     });
 
     document.getElementById('visorCerrar').addEventListener('click', cierra);

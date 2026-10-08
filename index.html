@@ -198,7 +198,7 @@
         .publicidad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px; }
         .publicidad-card { display:block; border-radius:18px; overflow:hidden; border:1px solid var(--beige); transition:transform .3s ease; }
         .publicidad-card:hover { transform:translateY(-4px); }
-        .publicidad-card img { width:100%; height:250px; object-fit:cover; display:block; }
+        .publicidad-card img { width:100%; height:340px; object-fit:contain; display:block; background:var(--background-light); }
 
         /* KIT PLANNER (#11 obligatoria) */
         .kit-section { margin-top:50px; background:linear-gradient(135deg,var(--primary-dark) 0%,#2d1422 100%); border-radius:20px; padding:40px; color:white; display:flex; flex-wrap:wrap; align-items:center; gap:30px; }
@@ -343,7 +343,11 @@
         .amen-nota { color:var(--gray-text); font-size:.86rem; margin-bottom:14px; }
         .amen-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(212px,1fr)); gap:16px; }
         .amen-card { background:var(--white); border:1px solid var(--beige); border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(31,31,31,.05); display:flex; flex-direction:column; }
-        .amen-card > img, .amen-card > video { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--background-light); }
+        .amen-card > img { width:100%; aspect-ratio:4/3; object-fit:contain; display:block; background:var(--background-light); padding:6px; }
+        .amen-card > video { width:100%; aspect-ratio:4/3; object-fit:contain; display:block; background:var(--primary-dark); }
+        .triptico-horizontal { display:flex; gap:2px; width:100%; border-radius:18px; overflow:hidden; background:#000; box-shadow:0 12px 30px rgba(0,0,0,.15); }
+        .triptico-horizontal .triptico-panel { flex:1 1 0; aspect-ratio:9/16; min-width:0; }
+        .triptico-horizontal video { width:100%; height:100%; object-fit:cover; display:block; }
         .amen-body { padding:13px 15px 16px; }
         .amen-body h5 { font-family:var(--font-serif); font-size:.97rem; margin:7px 0 5px; line-height:1.3; }
         .amen-body p { font-size:.79rem; color:var(--gray-text); line-height:1.5; }
@@ -592,7 +596,7 @@
         </div>
 
         <div class="include-item">
-            <div class="include-img-container"><img src="c-show_cabezones_real.webp" alt="Show de cabezones durante la fiesta" class="include-img"></div>
+            <div class="include-img-container"><img src="c-dj_mampara_cabina.webp" alt="Cabina de DJ con iluminación y pantalla" class="include-img"></div>
             <div class="include-content">
                 <span class="include-num">Área 06</span>
                 <h4><i class="fas fa-star"></i> Proveedores, entretenimiento y complementos</h4>
@@ -609,7 +613,7 @@
         </div>
 
         <div class="include-item">
-            <div class="include-img-container"><img src="galeria-3.jpg" alt="Detalle de montaje y servicio" class="include-img"></div>
+            <div class="include-img-container"><img src="unidad-contable-juridica.svg" alt="Contrato, facturación y resguardo documental" class="include-img"></div>
             <div class="include-content">
                 <span class="include-num">Área 07</span>
                 <h4><i class="fas fa-scale-balanced"></i> Unidad contable y unidad jurídica</h4>
@@ -721,41 +725,35 @@
 
     <!-- ═══ CATÁLOGO DE AMENIDADES ═══ -->
     <h3 class="section-title"><i class="fas fa-list-check"></i> Todo lo que se puede montar en tu espacio</h3>
-    <p class="section-intro">Este es el catálogo real con el que trabajamos. No lleva precios a propósito: cada evento se arma distinto. Lo que sí marcamos es cómo se maneja normalmente cada cosa — <b>lo que va incluido dentro de un paquete</b> y <b>lo que se suma aparte</b>. Tu espacio deja de tener que conseguir cualquiera de estas cosas: llegan montadas.</p>
+    <p class="section-intro">Este es el catálogo real con el que trabajamos: lo que se monta, se sirve y se enciende en un evento de Primavera. Tu espacio deja de tener que conseguir cualquiera de estas cosas — llegan montadas, operadas y desmontadas por el mismo equipo.</p>
     <h4 class="amen-sub"><i class="fas fa-music"></i> Música en vivo y show</h4>
-    <p class="amen-nota">Tres formatos distintos que cambian por completo el ánimo de una noche. Se contratan por evento según lo que la familia quiera.</p>
-    <div class="amen-grid">
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_saxofonista_poster.webp"><source src="c-musica_vivo_saxofonista.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Saxofonista en vivo</h5><p>Entra en el cóctel o en el vals. El formato más elegante y el más pedido.</p></div>
-            </div>
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_banda_poster.webp"><source src="c-musica_vivo_banda.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Banda y música en vivo</h5><p>Banda, mariachi o grupo versátil para el bloque fuerte de la fiesta.</p></div>
-            </div>
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-musica_vivo_chinelos_poster.webp"><source src="c-musica_vivo_chinelos.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Chinelos de Morelos</h5><p>Tradición local que levanta a todos. Marca el evento como morelense.</p></div>
-            </div>
+    <p class="amen-nota">Saxofonista para el cóctel y el vals, banda o mariachi para el bloque fuerte, y chinelos cuando el evento quiere sentirse de Morelos. Los tres cambian por completo el ánimo de una noche.</p>
+    <div class="triptico-horizontal">
+        <div class="triptico-panel"><video preload="none" data-autoplay="1" muted loop playsinline webkit-playsinline poster="c-musica_vivo_saxofonista_poster.webp"><source src="c-musica_vivo_saxofonista.mp4" type="video/mp4"></video></div>
+        <div class="triptico-panel"><video preload="none" data-autoplay="1" muted loop playsinline webkit-playsinline poster="c-musica_vivo_banda_poster.webp"><source src="c-musica_vivo_banda.mp4" type="video/mp4"></video></div>
+        <div class="triptico-panel"><video preload="none" data-autoplay="1" muted loop playsinline webkit-playsinline poster="c-musica_vivo_chinelos_poster.webp"><source src="c-musica_vivo_chinelos.mp4" type="video/mp4"></video></div>
     </div>
 
     <h4 class="amen-sub"><i class="fas fa-wand-magic-sparkles"></i> Entretenimiento y experiencias</h4>
     <p class="amen-nota">Lo que hace que la gente se levante de la mesa y que el evento se vea en redes al día siguiente.</p>
     <div class="amen-grid">
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-cabina_360.webp"><source src="c-cabina_360_video.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Cabina de experiencia 360°</h5><p>Video giratorio que el invitado se lleva al instante. También en versión inflable o espejo.</p></div>
+            <div class="amen-card"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-cabina_360.webp"><source src="c-cabina_360_video.mp4" type="video/mp4"></video>
+                <div class="amen-body"><h5>Cabina de experiencia 360°</h5><p>Video giratorio que el invitado se lleva al instante. También en versión inflable o espejo.</p></div>
             </div>
             <div class="amen-card"><img src="c-robot_leds.webp" alt="Robot LED interactivo" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Robot LED interactivo</h5><p>Baila con los invitados y abre la pista. El momento más grabado de la noche.</p></div>
+                <div class="amen-body"><h5>Robot LED interactivo</h5><p>Baila con los invitados y abre la pista. El momento más grabado de la noche.</p></div>
             </div>
             <div class="amen-card"><img src="c-show_cabezones_real.webp" alt="Show de cabezones" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Show de cabezones</h5><p>Irrumpe cuando la pista empieza a bajar y la vuelve a llenar.</p></div>
+                <div class="amen-body"><h5>Show de cabezones</h5><p>Irrumpe cuando la pista empieza a bajar y la vuelve a llenar.</p></div>
             </div>
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-magazine_cover_booth_poster.webp"><source src="c-magazine_cover_booth.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Magazine Cover Booth</h5><p>El invitado sale en portada de revista y se lleva la impresión.</p></div>
+            <div class="amen-card"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-magazine_cover_booth_poster.webp"><source src="c-magazine_cover_booth.mp4" type="video/mp4"></video>
+                <div class="amen-body"><h5>Magazine Cover Booth</h5><p>El invitado sale en portada de revista y se lleva la impresión.</p></div>
             </div>
             <div class="amen-card"><img src="c-cabina_inflable_fotos.webp" alt="Cabina inflable de fotos" loading="lazy">
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Cabina inflable de fotos</h5><p>Cabina cerrada con props, para los que no se animan frente a la cámara abierta.</p></div>
+                <div class="amen-body"><h5>Cabina inflable de fotos</h5><p>Cabina cerrada con props, para los que no se animan frente a la cámara abierta.</p></div>
             </div>
             <div class="amen-card"><img src="c-dinamica_mazo_retos.webp" alt="Dinámica del mazo de retos" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Dinámica del mazo de retos</h5><p>Juego dirigido por el animador que rompe el hielo entre mesas.</p></div>
+                <div class="amen-body"><h5>Dinámica del mazo de retos</h5><p>Juego dirigido por el animador que rompe el hielo entre mesas.</p></div>
             </div>
     </div>
 
@@ -763,25 +761,25 @@
     <p class="amen-nota">La producción técnica que convierte un salón en un escenario. Se monta y se desmonta el mismo día.</p>
     <div class="amen-grid">
             <div class="amen-card"><img src="c-pista_leds_5x5.webp" alt="Pista de baile LED 5×5 m" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Pista de baile LED 5×5 m</h5><p>Pista pixel inteligente. Cambia el centro visual del salón por completo.</p></div>
+                <div class="amen-body"><h5>Pista de baile LED 5×5 m</h5><p>Pista pixel inteligente. Cambia el centro visual del salón por completo.</p></div>
             </div>
             <div class="amen-card"><img src="c-dj_mampara_cabina.webp" alt="DJ con cabina y mampara" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>DJ con cabina y mampara</h5><p>Audio profesional, cabezas robóticas, láser y máquina de humo.</p></div>
+                <div class="amen-body"><h5>DJ con cabina y mampara</h5><p>Audio profesional, cabezas robóticas, láser y máquina de humo.</p></div>
             </div>
             <div class="amen-card"><img src="c-pantalla_proyector.webp" alt="Pantalla y torres robóticas" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Pantalla y torres robóticas</h5><p>Proyección del video de la familia y torres de iluminación móvil.</p></div>
+                <div class="amen-body"><h5>Pantalla y torres robóticas</h5><p>Proyección del video de la familia y torres de iluminación móvil.</p></div>
             </div>
             <div class="amen-card"><img src="c-letras_gigantes_iluminadas.webp" alt="Letras gigantes iluminadas" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Letras gigantes iluminadas</h5><p>XV, LOVE o el nombre. El punto de foto obligado de la noche.</p></div>
+                <div class="amen-body"><h5>Letras gigantes iluminadas</h5><p>XV, LOVE o el nombre. El punto de foto obligado de la noche.</p></div>
             </div>
             <div class="amen-card"><img src="c-corazon_rojo_iluminado.webp" alt="Corazón iluminado" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Corazón iluminado</h5><p>Pieza decorativa de entrada, lista para la foto de llegada.</p></div>
+                <div class="amen-body"><h5>Corazón iluminado</h5><p>Pieza decorativa de entrada, lista para la foto de llegada.</p></div>
             </div>
             <div class="amen-card"><img src="c-pirotecnia_fria_chisperos.webp" alt="Chisperos y pirotecnia fría" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Chisperos y pirotecnia fría</h5><p>Para la entrada, el brindis o el vals. Sin humo y sin riesgo en interiores.</p></div>
+                <div class="amen-body"><h5>Chisperos y pirotecnia fría</h5><p>Para la entrada, el brindis o el vals. Sin humo y sin riesgo en interiores.</p></div>
             </div>
             <div class="amen-card"><img src="c-amenidades_pista.webp" alt="Amenidades de pista" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Amenidades de pista</h5><p>Pulseras neón, collares, antifaces y globos para el bloque de fiesta.</p></div>
+                <div class="amen-body"><h5>Amenidades de pista</h5><p>Pulseras neón, collares, antifaces y globos para el bloque de fiesta.</p></div>
             </div>
     </div>
 
@@ -789,25 +787,25 @@
     <p class="amen-nota">La parte que más se recuerda al día siguiente, y donde más se nota si hay oficio detrás de la barra.</p>
     <div class="amen-grid">
             <div class="amen-card"><img src="c-barra_mixologia_1.webp" alt="Barra de mixología" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Barra de mixología</h5><p>Barmen profesionales preparando al momento, no solo sirviendo.</p></div>
+                <div class="amen-body"><h5>Barra de mixología</h5><p>Barmen profesionales preparando al momento, no solo sirviendo.</p></div>
             </div>
             <div class="amen-card"><img src="c-barra_snacks_real.webp" alt="Barra de snacks con 12 toppings" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Barra de snacks con 12 toppings</h5><p>Estación dulce y salada abierta durante el cóctel.</p></div>
+                <div class="amen-body"><h5>Barra de snacks con 12 toppings</h5><p>Estación dulce y salada abierta durante el cóctel.</p></div>
             </div>
             <div class="amen-card"><img src="c-mezcladores.webp" alt="Mezcladores y descorche libre" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Mezcladores y descorche libre</h5><p>La familia ingresa su alcohol y la barra opera hielo, servicio y mezcladores.</p></div>
+                <div class="amen-body"><h5>Mezcladores y descorche libre</h5><p>La familia ingresa su alcohol y la barra opera hielo, servicio y mezcladores.</p></div>
             </div>
             <div class="amen-card"><img src="c-aguas_frescas.webp" alt="Aguas frescas y cóctel sin alcohol" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Aguas frescas y cóctel sin alcohol</h5><p>Margaritas, piñada y mojito sin alcohol para la bienvenida.</p></div>
+                <div class="amen-body"><h5>Aguas frescas y cóctel sin alcohol</h5><p>Margaritas, piñada y mojito sin alcohol para la bienvenida.</p></div>
             </div>
             <div class="amen-card"><img src="c-cristaleria.webp" alt="Cristalería y barra premium" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Cristalería y barra premium</h5><p>Cristalería fina de color, loza y plaqué a juego con la paleta del evento.</p></div>
+                <div class="amen-body"><h5>Cristalería y barra premium</h5><p>Cristalería fina de color, loza y plaqué a juego con la paleta del evento.</p></div>
             </div>
             <div class="amen-card"><img src="c-tornafiesta_maruchan_esquites.webp" alt="Tornafiesta" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Tornafiesta</h5><p>Esquites o chilaquiles al cierre, cuando la fiesta ya pidió segundo aire.</p></div>
+                <div class="amen-body"><h5>Tornafiesta</h5><p>Esquites o chilaquiles al cierre, cuando la fiesta ya pidió segundo aire.</p></div>
             </div>
-            <div class="amen-card"><video controls preload="none" playsinline poster="c-mesa_pastel.webp"><source src="c-video_pastel.mp4" type="video/mp4"></video>
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Pastel de autor</h5><p>Diseñado a la medida del evento, según pisos y temática.</p></div>
+            <div class="amen-card"><video data-autoplay="1" muted loop playsinline webkit-playsinline preload="none" poster="c-mesa_pastel.webp"><source src="c-video_pastel.mp4" type="video/mp4"></video>
+                <div class="amen-body"><h5>Pastel de autor</h5><p>Diseñado a la medida del evento, según pisos y temática.</p></div>
             </div>
     </div>
 
@@ -815,30 +813,30 @@
     <p class="amen-nota">Lo que queda después del sábado — para la familia y para el catálogo de tu espacio.</p>
     <div class="amen-grid">
             <div class="amen-card"><img src="c-fotografia_video.webp" alt="Fotografía y video profesional" loading="lazy">
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Fotografía y video profesional</h5><p>Doble cámara de cine, dron 4K, álbumes y photobooks de gran formato.</p></div>
+                <div class="amen-body"><h5>Fotografía y video profesional</h5><p>Doble cámara de cine, dron 4K, álbumes y photobooks de gran formato.</p></div>
             </div>
             <div class="amen-card"><img src="c-invitacion_digital.webp" alt="Invitación digital premium" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Invitación digital premium</h5><p>Con RSVP automático, mapa, galería en vivo por QR y música. Va de cortesía.</p></div>
+                <div class="amen-body"><h5>Invitación digital premium</h5><p>Con RSVP automático, mapa, galería en vivo por QR y música. Va de cortesía.</p></div>
             </div>
             <div class="amen-card"><img src="c-buenos_deseos_video.webp" alt="Buenos deseos en video" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Buenos deseos en video</h5><p>Los invitados graban su mensaje y se entrega editado a la familia.</p></div>
+                <div class="amen-body"><h5>Buenos deseos en video</h5><p>Los invitados graban su mensaje y se entrega editado a la familia.</p></div>
             </div>
             <div class="amen-card"><img src="c-souvenirs_personalizados.webp" alt="Souvenirs personalizados" loading="lazy">
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Souvenirs personalizados</h5><p>Desde tequila grabado a detalle de mesa, con el nombre del evento.</p></div>
+                <div class="amen-body"><h5>Souvenirs personalizados</h5><p>Desde tequila grabado a detalle de mesa, con el nombre del evento.</p></div>
             </div>
             <div class="amen-card"><img src="c-servicio_cafe.webp" alt="Servicio de café" loading="lazy">
-                <div class="amen-body"><span class="pill inc">Va incluido</span><h5>Servicio de café</h5><p>Estación de café para el cierre de la noche.</p></div>
+                <div class="amen-body"><h5>Servicio de café</h5><p>Estación de café para el cierre de la noche.</p></div>
             </div>
             <div class="amen-card"><img src="c-limusinas.webp" alt="Limusinas y transporte" loading="lazy">
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Limusinas y transporte</h5><p>Traslado de los anfitriones y transporte masivo de invitados.</p></div>
+                <div class="amen-body"><h5>Limusinas y transporte</h5><p>Traslado de los anfitriones y transporte masivo de invitados.</p></div>
             </div>
             <div class="amen-card"><img src="c-servicios_emergencia.webp" alt="Servicios prehospitalarios" loading="lazy">
-                <div class="amen-body"><span class="pill pago">Se suma aparte</span><h5>Servicios prehospitalarios</h5><p>Personal y equipo en sitio durante todo el evento.</p></div>
+                <div class="amen-body"><h5>Servicios prehospitalarios</h5><p>Personal y equipo en sitio durante todo el evento.</p></div>
             </div>
     </div>
 
     <h4 class="amen-sub"><i class="fas fa-shirt"></i> Merchandising del evento</h4>
-    <p class="amen-nota">Línea de producto personalizada para la familia y sus invitados: playeras, gorras, bolsas y accesorios con la identidad del evento. <span class="pill pago" style="margin-left:4px">Se suma aparte</span></p>
+    <p class="amen-nota">Línea de producto personalizada para la familia y sus invitados: playeras, gorras, bolsas y accesorios con la identidad del evento.</p>
     <div class="slides-section slides-fotos" style="margin-top:0">
         <div class="slides-wrap">
             <button class="slide-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
@@ -867,7 +865,7 @@
             </div>
     </div>
 
-    <p class="table-note">Lo que entra incluido cambia según el paquete, la escala del evento y el venue. Las etiquetas de arriba reflejan cómo se maneja habitualmente, no una regla fija.</p>
+    <p class="table-note">Lo que entra en cada evento se define según el paquete, la escala y el espacio. Esto es el inventario de lo que existe y se opera, no una lista cerrada.</p>
 
     <!-- ═══ RENDER 3D DEL ESPACIO ═══ -->
     <div class="video-section">
@@ -1260,9 +1258,9 @@
         <h3 class="section-title"><i class="fas fa-star"></i> Los cuatro mercados que ya están comprando</h3>
         <p class="section-intro">Tu espacio entra a cuatro embudos que hoy ya están corriendo y generando prospectos. No hay que construirlos: hay que meterte en ellos.</p>
         <div class="publicidad-grid">
-            <a class="publicidad-card" href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" rel="noopener"><img src="pub-xv-anos.jpg" alt="XV Años Primavera"></a>
-            <a class="publicidad-card" href="https://primaveraeventsgroup.com/bodas/" target="_blank" rel="noopener"><img src="pub-bodas.jpg" alt="Bodas Primavera"></a>
-            <a class="publicidad-card" href="https://primaveraeventsgroup.com/graduaciones-primavera/" target="_blank" rel="noopener"><img src="pub-graduaciones.jpg" alt="Graduaciones Primavera"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" rel="noopener"><img src="pub-xv-anos-2027.png" alt="XV Años Primavera · agenda abierta 2027"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/bodas/" target="_blank" rel="noopener"><img src="pub-bodas-2027.jpg" alt="Bodas Primavera · agenda abierta 2027"></a>
+            <a class="publicidad-card" href="https://primaveraeventsgroup.com/graduaciones-primavera/" target="_blank" rel="noopener"><img src="pub-graduaciones-2027.png" alt="Graduaciones Primavera · generación 2027"></a>
             <a class="publicidad-card" href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" rel="noopener"><img src="pub-planning.jpg" alt="Wedding Planning con Jessy y Richard"></a>
         </div>
     </div>
@@ -1502,6 +1500,43 @@
             sl.addEventListener('click', function () { abre(fuentes, k); });
         });
         marca();
+    });
+
+    // ── Videos locales: arrancan solos al entrar en pantalla y se pausan al salir ──
+    function activaVideo(v) {
+        if (v.offsetParent === null) return;
+        if (v.preload === 'none') v.preload = 'auto';
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+    }
+    var obsVideo = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) activaVideo(e.target);
+            else if (!e.target.paused) e.target.pause();
+        });
+    }, { rootMargin: '150px 0px', threshold: 0.05 }) : null;
+    var autoVids = document.querySelectorAll('video[data-autoplay]');
+    Array.prototype.forEach.call(autoVids, function (v) {
+        if (obsVideo) obsVideo.observe(v); else activaVideo(v);
+    });
+
+    // El primer play() rebota si la pestana todavia no esta visible: se reintenta
+    // al hacer scroll y al volver a la pestana, para que ninguno se quede parado.
+    var reintentoPendiente = false;
+    function arrancaVisibles() {
+        reintentoPendiente = false;
+        Array.prototype.forEach.call(autoVids, function (v) {
+            if (!v.paused) return;
+            var r = v.getBoundingClientRect();
+            if (r.bottom > -150 && r.top < (window.innerHeight || 0) + 150) activaVideo(v);
+        });
+    }
+    window.addEventListener('scroll', function () {
+        if (reintentoPendiente) return;
+        reintentoPendiente = true;
+        requestAnimationFrame(arrancaVisibles);
+    }, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) arrancaVisibles();
     });
 
     // ── YouTube diferido: la miniatura es un boton, el iframe entra al hacer clic ──
